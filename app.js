@@ -1,18 +1,20 @@
-process.env.CYCLIC_DB = 'https://struction-backend.cyclic.app'
-const CyclicDB = require('@cyclic.sh/dynamodb')
-const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
+const express = require('express');
 
-const run = async function(){
-    let animals = db.collection('animals')
 
-    //create an item in collection with key "leo"
-    let leo = await animals.set('marcin', {
-        type:'human',
-        color:'white'
-    })
+const { getUser, getProject, postMarker } = require('./controllers/controllers.js');
 
-    // get an item at key "leo" from collection animals
-    let item = await animals.get('marcin')
-    console.log(item)
-}
-run()
+const app = express();
+app.use(express.json());
+
+app.get('/api/users/:username', getUser);
+app.get('/api/projects/:project_name', getProject);
+
+app.post('/api/markers/:project_name', postMarker);
+
+
+app.all('/*', (req, res) => {
+    res.status(404).send({ msg: 'Path not found' });
+  });
+  
+
+module.exports = app;

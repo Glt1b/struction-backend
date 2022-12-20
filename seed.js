@@ -8,7 +8,7 @@ const run = async function(){
 
     let users = db.collection('users')
 
-    let test_user = await users.set('test user', {
+    let test_user = await users.set('test_user', {
         "mail": "mail@gmail.com",
         "role": "worker",
         "password": "worker123",
@@ -111,7 +111,7 @@ const run = async function(){
          ]
      })
 
-    let itemTestUser = await users.get('test user')
+    let itemTestUser = await users.get('test_user')
     let itemDetails1 = await project1.get('details')
     let itemMarkers1 = await project1.get('markers')
     let itemDetails2 = await project2.get('details')
