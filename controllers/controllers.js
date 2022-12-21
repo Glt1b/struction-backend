@@ -34,3 +34,7 @@ exports.delMarker = (req, res) => {
         res.status(200).send(obj)
     })
 }
+
+exports.patchMarker = (req, res) => {
+    
+}

@@ -12,7 +12,30 @@ exports.getProjectDynamo = async (project_name) => {
     let project = db.collection(project_name);
     let details = await project.get('details');
     let markers = await project.get('markers');
-    const obj = {project: [details, markers]};
+
+   
+    const markersToSend = [];
+
+    for ( let marker of markers.props.markers ){
+        const key = Object.keys(marker)[0];
+
+        mrk = {
+            id: marker[key].id,
+            number: marker[key].number,
+            location: marker[key].location,
+            locationOnDrawing: marker[key].locationOnDrawing,
+            materialUsed: marker[key].materialUsed,
+            measurements: marker[key].measurements,
+            service: marker[key].service,
+            completedBy: marker[key].completedBy,
+            photos: marker[key].photos,
+            photos_after: marker[key].photos_after
+        }
+
+        markersToSend.push(mrk)
+    }
+
+    const obj = {project: [details, markersToSend]};
     return obj
 }
 
@@ -28,8 +51,30 @@ exports.postMarkerDynamo = async (project_name, marker) => {
     })
 
     let res = await project.get('markers');
+      
+    const markersToSend = [];
+
+    for ( let marker of res.props.markers ){
+        const key = Object.keys(marker)[0];
+
+        mrk = {
+            id: marker[key].id,
+            number: marker[key].number,
+            location: marker[key].location,
+            locationOnDrawing: marker[key].locationOnDrawing,
+            materialUsed: marker[key].materialUsed,
+            measurements: marker[key].measurements,
+            service: marker[key].service,
+            completedBy: marker[key].completedBy,
+            photos: marker[key].photos,
+            photos_after: marker[key].photos_after
+        }
+
+        markersToSend.push(mrk)
+    }
+
     
-    return res
+    return markersToSend
 
 }
 
@@ -53,6 +98,29 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
 
     let res = await project.get('markers');
     
-    return res
+    const markersToSend = [];
+
+    for ( let marker of res.props.markers ){
+        const key = Object.keys(marker)[0];
+
+        mrk = {
+            id: marker[key].id,
+            number: marker[key].number,
+            location: marker[key].location,
+            locationOnDrawing: marker[key].locationOnDrawing,
+            materialUsed: marker[key].materialUsed,
+            measurements: marker[key].measurements,
+            service: marker[key].service,
+            completedBy: marker[key].completedBy,
+            photos: marker[key].photos,
+            photos_after: marker[key].photos_after
+        }
+
+        markersToSend.push(mrk)
+    }
+
+    
+    return markersToSend
+
 
 }

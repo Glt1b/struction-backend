@@ -36,7 +36,7 @@ const run = async function(){
         "markers": [
 
             {"marcin-timestamp": { 
-                "marker_id": "marcin-timestamp",
+                "id": "marcin-timestamp",
                 "number": "A/12/22",
                 "location": "ground floor",
                 "locationOnDrawing": ["200", "400"],
@@ -50,7 +50,7 @@ const run = async function(){
             }},
     
             {"carl-timestamp": { 
-              "marker_id": "carl-timestamp",
+              "id": "carl-timestamp",
               "number": "B/12/22",
               "location": "first floor",
               "locationOnDrawing": ["200", "400"],
@@ -86,7 +86,7 @@ const run = async function(){
          "markers": [
  
              {"marcin-timestamp": { 
-                 "marker_id": "marcin-timestamp",
+                 "id": "marcin-timestamp",
                  "number": "A/12/22",
                  "location": "ground floor",
                  "locationOnDrawing": ["800", "800"],
@@ -100,7 +100,7 @@ const run = async function(){
              }},
      
              {"carl-timestamp": { 
-               "marker_id": "carl-timestamp",
+               "id": "carl-timestamp",
                "number": "B/12/22",
                "location": "first floor",
                "locationOnDrawing": ["100", "100"],

@@ -31,21 +31,14 @@ describe('GET/api/projects/:project_name', () => {
         .expect(200)
 
     })
-    test('404 - respond with project does not exist', () => {
-        return request(app)
-        .get('/api/projects/ascd')
-        .expect(404)
-        .then((res) => {
-            expect(res.body.msg).toEqual('Project not found');
-        })
-    })
+
 })
 
 describe('POST/api/markers/:project_name', () => {
     test('200 - respond with updated markers object', () => {
         marker = {
             "user-timestamp": { 
-                "marker_id": "user-timestamp",
+                "id": "user-timestamp",
                 "number": "new number",
                 "location": "another floor",
                 "locationOnDrawing": ["200", "400"],
@@ -71,7 +64,7 @@ describe('DELETE/api/:project_name/:marker_id', () => {
     test('204 - respond with project object', () => {
         return request(app)
         .delete('/api/project1/marcin-timestamp')
-        .expect(204)
+        .expect(200)
 
     })
 
