@@ -37,12 +37,18 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
     let project = db.collection(project_name);
     let markers = await project.get('markers');
 
-    let newMarkers = markers.props.markers
+    const newMarkers = markers.props.markers
+    
+    const markersUpdated = [];
 
-    console.log(newMarkers)
+    for ( let marker of newMarkers){
+        if ( !marker[marker_id] ) {
+            markersUpdated.push(marker)
+        }
+    }
 
     let set = await project.set('markers', {
-        'markers': newMarkers
+        'markers': markersUpdated
     })
 
     let res = await project.get('markers');

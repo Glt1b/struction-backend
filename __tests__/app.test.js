@@ -44,7 +44,8 @@ describe('GET/api/projects/:project_name', () => {
 describe('POST/api/markers/:project_name', () => {
     test('200 - respond with updated markers object', () => {
         marker = {
-            "marcin/timestamp": { 
+            "user-timestamp": { 
+                "marker_id": "user-timestamp",
                 "number": "new number",
                 "location": "another floor",
                 "locationOnDrawing": ["200", "400"],

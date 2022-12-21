@@ -30,6 +30,7 @@ exports.postMarker = (req, res) => {
 
 exports.delMarker = (req, res) => {
     delMarkerDynamo(req.params.project_name, req.params.marker_id).then((result) => {
-        
+        const obj = {markers: result}
+        res.status(200).send(obj)
     })
 }
