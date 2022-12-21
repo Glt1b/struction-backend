@@ -69,3 +69,25 @@ describe('DELETE/api/:project_name/:marker_id', () => {
     })
 
 })
+
+describe('PATCH/api/:project_name/:marker_id', () => {
+    test('204 - respond with project object', () => {
+        marker = {
+            "carl-timestamp": { 
+                "id": "carl-timestamp",
+                "number": "updated number",
+                "location": "ground floor",
+                "locationOnDrawing": ["200", "400"],
+                "materialsUsed": ["collar", "mastic"],
+                "measurements": ["150", "150"],
+                "service": ["pipe"],
+                "completedBy": "username",
+                "photos": ["url to photo 1", "url to photo 2"],
+                "photos_after": ["url to photo 1", "url to photo 2"]
+        }}
+        return request(app)
+        .patch('/api/project1/carl-timestamp')
+        .send(marker)
+        .expect(200)
+    })
+})

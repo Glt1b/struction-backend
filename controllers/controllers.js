@@ -1,5 +1,9 @@
 
-const { getUserDynamo, getProjectDynamo, postMarkerDynamo, delMarkerDynamo } = require('../models/models.js');
+const { getUserDynamo,
+    getProjectDynamo,
+    postMarkerDynamo,
+    delMarkerDynamo,
+    patchMarkerDynamo } = require('../models/models.js');
 
 exports.getUser = (req, res) => {
     getUserDynamo(req.params.username).then((result) => {
@@ -36,5 +40,8 @@ exports.delMarker = (req, res) => {
 }
 
 exports.patchMarker = (req, res) => {
-    
+    patchMarkerDynamo(req.params.project_name, req.params.marker_id, req.body).then((result) => {
+        const obj = {markers: result}
+        res.status(200).send(obj)
+    })
 }

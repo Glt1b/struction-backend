@@ -118,9 +118,51 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
 
         markersToSend.push(mrk)
     }
-
-    
     return markersToSend
+}
 
+exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
+    let project = db.collection(project_name);
+    let markers = await project.get('markers');
+
+    const newMarkers = markers.props.markers
+    
+    const markersUpdated = [];
+
+    for ( let marker of newMarkers){
+        if ( !marker[marker_id] ) {
+            markersUpdated.push(marker)
+        }
+    }
+
+    markersUpdated.push(obj);
+
+    let set = await project.set('markers', {
+        'markers': markersUpdated
+    })
+
+    let res = await project.get('markers');
+    
+    const markersToSend = [];
+
+    for ( let marker of res.props.markers ){
+        const key = Object.keys(marker)[0];
+
+        mrk = {
+            id: marker[key].id,
+            number: marker[key].number,
+            location: marker[key].location,
+            locationOnDrawing: marker[key].locationOnDrawing,
+            materialUsed: marker[key].materialUsed,
+            measurements: marker[key].measurements,
+            service: marker[key].service,
+            completedBy: marker[key].completedBy,
+            photos: marker[key].photos,
+            photos_after: marker[key].photos_after
+        }
+
+        markersToSend.push(mrk)
+    }
+    return markersToSend
 
 }
