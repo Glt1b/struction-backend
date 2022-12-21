@@ -32,3 +32,21 @@ exports.postMarkerDynamo = async (project_name, marker) => {
     return res
 
 }
+
+exports.delMarkerDynamo = async (project_name, marker_id) => {
+    let project = db.collection(project_name);
+    let markers = await project.get('markers');
+
+    let newMarkers = markers.props.markers
+
+    console.log(newMarkers)
+
+    let set = await project.set('markers', {
+        'markers': newMarkers
+    })
+
+    let res = await project.get('markers');
+    
+    return res
+
+}

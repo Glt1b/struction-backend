@@ -1,6 +1,10 @@
 const request = require('supertest');
 const app = require('../app');
 
+const seed = require('../seed.js')
+
+beforeEach(() => seed);
+
 describe('GET/api/users/:username', () => {
     test('200 - respond with user object', () => {
         return request(app)
@@ -60,4 +64,14 @@ describe('POST/api/markers/:project_name', () => {
 
     })
    
+})
+
+describe('DELETE/api/:project_name/:marker_id', () => {
+    test('204 - respond with project object', () => {
+        return request(app)
+        .delete('/api/project1/marcin-timestamp')
+        .expect(204)
+
+    })
+
 })

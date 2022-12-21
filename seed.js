@@ -35,7 +35,7 @@ const run = async function(){
     let markers1 = await project1.set('markers', {
         "markers": [
 
-            {"marcin/timestamp": { 
+            {"marcin-timestamp": { 
                 "number": "A/12/22",
                 "location": "ground floor",
                 "locationOnDrawing": ["200", "400"],
@@ -48,7 +48,7 @@ const run = async function(){
     
             }},
     
-            {"carl/timestamp": { 
+            {"carl-timestamp": { 
               "number": "B/12/22",
               "location": "first floor",
               "locationOnDrawing": ["200", "400"],
@@ -83,7 +83,7 @@ const run = async function(){
      let markers2 = await project2.set('markers', {
          "markers": [
  
-             {"marcin/timestamp": { 
+             {"marcin-timestamp": { 
                  "number": "A/12/22",
                  "location": "ground floor",
                  "locationOnDrawing": ["800", "800"],
@@ -96,7 +96,7 @@ const run = async function(){
      
              }},
      
-             {"carl/timestamp": { 
+             {"carl-timestamp": { 
                "number": "B/12/22",
                "location": "first floor",
                "locationOnDrawing": ["100", "100"],
@@ -111,13 +111,13 @@ const run = async function(){
          ]
      })
 
-    let itemTestUser = await users.get('test_user')
-    let itemDetails1 = await project1.get('details')
-    let itemMarkers1 = await project1.get('markers')
-    let itemDetails2 = await project2.get('details')
-    let itemMarkers2 = await project2.get('markers')
+    // let itemTestUser = await users.get('test_user')
+    // let itemDetails1 = await project1.get('details')
+    // let itemMarkers1 = await project1.get('markers')
+    // let itemDetails2 = await project2.get('details')
+    // let itemMarkers2 = await project2.get('markers')
 
 
-    console.log(itemTestUser, itemDetails1, itemMarkers1, itemDetails2, itemMarkers2)
+    // console.log(itemTestUser, itemDetails1, itemMarkers1, itemDetails2, itemMarkers2)
 }
 run()

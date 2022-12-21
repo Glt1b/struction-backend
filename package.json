@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seed": "node .seed.js",
+    "start": "node listen.js"
   },
   "repository": {
     "type": "git",
