@@ -169,11 +169,11 @@ exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
     return markersToSend
 }
 
-exports.getDrawingDynamo = async () => {
+exports.getDrawingDynamo = async (image_id) => {
 
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "test.jpg",
+        Key: image_id
     }).promise()
 
     return my_file.Body

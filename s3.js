@@ -11,13 +11,13 @@ const storage = async function (){
 
     const uploadedImage = await s3.upload({
         Bucket: bucket,
-        Key: 'plan.jpg',
+        Key: 'plan1.jpeg',
         Body: image,
       }).promise()
 
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "test.jpg",
+        Key: "plan1.jpeg",
     }).promise()
 
     //const buffer = Buffer.from(my_file, "base64");

@@ -48,7 +48,7 @@ exports.patchMarker = (req, res) => {
 }
 
 exports.getDrawing = (req, res) => {
-    getDrawingDynamo().then((result) => {
+    getDrawingDynamo(req.params.image_id).then((result) => {
         obj = {plan: result}
         res.status(200).send(obj)
     })

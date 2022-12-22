@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.get("/api/users/:username", getUser);
 app.get("/api/projects/:project_name", getProject);
-app.get("/api/plan", getDrawing)
+app.get("/api/image/:image_id", getDrawing)
 
 app.post("/api/markers/:project_name", postMarker);
 

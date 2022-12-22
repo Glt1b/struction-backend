@@ -95,7 +95,7 @@ describe('PATCH/api/:project_name/:marker_id', () => {
 describe('GET/plan', () => {
     test('200 - respond with plan', () => {
         return request(app)
-        .get('/api/plan')
+        .get('/api/image/plan1.jpeg')
         .expect(200)
 
     })
