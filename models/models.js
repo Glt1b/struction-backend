@@ -1,6 +1,9 @@
 process.env.CYCLIC_DB = 'https://struction-backend.cyclic.app'
 const CyclicDB = require('@cyclic.sh/dynamodb')
 const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
+const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
 
 exports.getUserDynamo = async (username) => {
     let users = db.collection('users');
@@ -164,5 +167,14 @@ exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
         markersToSend.push(mrk)
     }
     return markersToSend
+}
 
+exports.getDrawingDynamo = async () => {
+
+    let my_file = await s3.getObject({
+        Bucket: bucket,
+        Key: "test.jpg",
+    }).promise()
+
+    return my_file.Body
 }

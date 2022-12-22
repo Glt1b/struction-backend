@@ -91,3 +91,13 @@ describe('PATCH/api/:project_name/:marker_id', () => {
         .expect(200)
     })
 })
+
+describe('GET/plan', () => {
+    test('200 - respond with plan', () => {
+        return request(app)
+        .get('/api/plan')
+        .expect(200)
+
+    })
+
+})

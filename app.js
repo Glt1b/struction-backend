@@ -5,7 +5,8 @@ const {
   getProject,
   postMarker,
   delMarker,
-  patchMarker
+  patchMarker,
+  getDrawing
 } = require("./controllers/controllers.js");
 const cors = require("cors");
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.get("/api/users/:username", getUser);
 app.get("/api/projects/:project_name", getProject);
+app.get("/api/plan", getDrawing)
 
 app.post("/api/markers/:project_name", postMarker);
 
