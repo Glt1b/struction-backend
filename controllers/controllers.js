@@ -58,7 +58,7 @@ exports.getDrawing = (req, res) => {
 }
 
 exports.seedDB =(req, res) => {
-    run().then((result) => {
-        res.status(200).send({msg: 'DB seed completed'})
+    seedDynamo.then((result) => {
+        res.status(200).send({msg: result})
     })
 }
