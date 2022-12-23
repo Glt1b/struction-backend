@@ -26,8 +26,10 @@ const run = async function(){
             "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
-                {"ground floor": "url to drawing"},
-                {"first floor": "url to drawing"}
+                {   "name": "ground floor",
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg"},
+                {   "name": "first floor",
+                    "url": "https://www.houseplanshelper.com/images/how-to-read-floor-plans-full-floor-plan.jpg"}
                 ]
           
     })
@@ -114,6 +116,8 @@ const run = async function(){
            }}
          ]
      })
+
+     return 'done'
 
      //let itemTestUser = await users.get('test_user')
     // let itemDetails1 = await project1.get('details')

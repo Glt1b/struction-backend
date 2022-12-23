@@ -7,17 +7,17 @@ const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
 
 const storage = async function (){
 
-    const  image = fs.readFileSync('./plan.jpg');
+    const image = ''
 
     const uploadedImage = await s3.upload({
         Bucket: bucket,
-        Key: 'plan1.jpeg',
+        Key: 'drawing',
         Body: image,
       }).promise()
 
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "plan1.jpeg",
+        Key: "drawing",
     }).promise()
 
     //const buffer = Buffer.from(my_file, "base64");

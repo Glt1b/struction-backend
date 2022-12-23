@@ -4,7 +4,10 @@ const { getUserDynamo,
     postMarkerDynamo,
     delMarkerDynamo,
     patchMarkerDynamo,
-    getDrawingDynamo} = require('../models/models.js');
+    getDrawingDynamo,
+seedDynamo} = require('../models/models.js');
+
+const { run } = require('../seed.js')
 
 exports.getUser = (req, res) => {
     getUserDynamo(req.params.username).then((result) => {
@@ -51,5 +54,11 @@ exports.getDrawing = (req, res) => {
     getDrawingDynamo(req.params.image_id).then((result) => {
         obj = {plan: result}
         res.status(200).send(obj)
+    })
+}
+
+exports.seedDB =(req, res) => {
+    run().then((result) => {
+        res.status(200).send({msg: 'DB seed completed'})
     })
 }
