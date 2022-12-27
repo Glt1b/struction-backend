@@ -5,7 +5,8 @@ const { getUserDynamo,
     delMarkerDynamo,
     patchMarkerDynamo,
     getDrawingDynamo,
-seedDynamo} = require('../models/models.js');
+    postImageS3,
+    delImageS3} = require('../models/models.js');
 
 const { run } = require('../seed.js')
 
@@ -46,19 +47,27 @@ exports.delMarker = (req, res) => {
 exports.patchMarker = (req, res) => {
     patchMarkerDynamo(req.params.project_name, req.params.marker_id, req.body).then((result) => {
         const obj = {markers: result}
+        console.log(obj)
         res.status(200).send(obj)
     })
 }
 
 exports.getDrawing = (req, res) => {
     getDrawingDynamo(req.params.image_id).then((result) => {
-        obj = {plan: result}
+        obj = {image: result}
         res.status(200).send(obj)
     })
 }
 
-exports.seedDB =(req, res) => {
-    seedDynamo.then((result) => {
-        res.status(200).send({msg: result})
+exports.postImage = (req, res) => {
+    postImageS3(req.params,image_id, req.body).then((result) => {
+        obj = {image: result}
+        res.status(200).send(obj)
+    })
+}
+
+exports.delImage = (req, res) => {
+    delImageS3(req.params.image_id).then((result) => {
+        res.status(204)
     })
 }

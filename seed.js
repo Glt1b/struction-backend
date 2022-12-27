@@ -78,19 +78,21 @@ run = async function(){
              "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
              "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
              "locations": [
-                 {"basement": "url to drawing"},
-                 {"second floor": "url to drawing"}
-                 ]
+                {   "name": "basement",
+                    "url": "https://wpmedia.roomsketcher.com/content/uploads/2021/12/14164614/RoomSketcher-House-Floor-Plans-2452430-800.jpg"},
+                {   "name": "second floor",
+                    "url": "https://wcs.smartdraw.com/floor-plan/img/floor-plan-design.png?bn=15100111860"}
+                ]
            
      })
  
      let markers2 = await project2.set('markers', {
          "markers": [
  
-             {"marcin-timestamp": { 
-                 "id": "marcin-timestamp",
+             {"alexandr-timestamp": { 
+                 "id": "alexandr-timestamp",
                  "number": "A/12/22",
-                 "location": "ground floor",
+                 "location": "basement",
                  "locationOnDrawing": ["800", "800"],
                  "materialsUsed": ["collar", "mastic"],
                  "measurements": ["150", "150"],
@@ -101,10 +103,10 @@ run = async function(){
      
              }},
      
-             {"carl-timestamp": { 
-               "id": "carl-timestamp",
+             {"adam-timestamp": { 
+               "id": "adam-timestamp",
                "number": "B/12/22",
-               "location": "first floor",
+               "location": "second floor",
                "locationOnDrawing": ["100", "100"],
                "materialsUsed": ["firebatt", "mastic", "wrap"],
                "measurements": ["150", "150"],
