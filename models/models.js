@@ -32,6 +32,7 @@ exports.getProjectDynamo = async (project_name) => {
             measurements: marker[key].measurements,
             service: marker[key].service,
             completedBy: marker[key].completedBy,
+            comment: marker[key].comment,
             photos: marker[key].photos,
             photos_after: marker[key].photos_after
         }
@@ -70,6 +71,7 @@ exports.postMarkerDynamo = async (project_name, marker) => {
             measurements: marker[key].measurements,
             service: marker[key].service,
             completedBy: marker[key].completedBy,
+            comment: marker[key].comment,
             photos: marker[key].photos,
             photos_after: marker[key].photos_after
         }
@@ -116,6 +118,7 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
             measurements: marker[key].measurements,
             service: marker[key].service,
             completedBy: marker[key].completedBy,
+            comment: marker[key].comment,
             photos: marker[key].photos,
             photos_after: marker[key].photos_after
         }
@@ -161,6 +164,7 @@ exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
             measurements: marker[key].measurements,
             service: marker[key].service,
             completedBy: marker[key].completedBy,
+            comment: marker[key].comment,
             photos: marker[key].photos,
             photos_after: marker[key].photos_after
         }

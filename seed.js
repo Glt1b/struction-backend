@@ -12,14 +12,14 @@ run = async function(){
         "mail": "mail@gmail.com",
         "role": "worker",
         "password": "worker123",
-        "projects": ["project1", "project2"]
+        "projects": ["apartments_unit", "medical_centre"]
     })
 
     // project1
 
-    let project1 = db.collection('project1')
+    let apartments_unit = db.collection('apartments_unit')
 
-    let details1 = await project1.set('details', {
+    let details1 = await apartments_unit.set('details', {
         
             "address": "some_address",
             "users": ["Marcin", "Carl"],
@@ -27,25 +27,59 @@ run = async function(){
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
                 {   "name": "ground floor",
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg"},
+                    "url": "project1-ground_floor"},
                 {   "name": "first floor",
-                    "url": "https://www.houseplanshelper.com/images/how-to-read-floor-plans-full-floor-plan.jpg"}
+                    "url": "project1-first_floor"}
                 ]
           
     })
 
-    let markers1 = await project1.set('markers', {
+    let markers1 = await apartments_unit.set('markers', {
         "markers": [
 
-            {"marcin-timestamp": { 
-                "id": "marcin-timestamp",
+            {"marcin-timestamp1": { 
+                "id": "marcin-timestamp1",
                 "number": "A/12/22",
+                "status": "completed",
                 "location": "ground floor",
-                "locationOnDrawing": ["200", "400"],
+                "locationOnDrawing": ["100", "900"],
                 "materialsUsed": ["collar", "mastic"],
                 "measurements": ["150", "150"],
                 "service": ["pipe"],
                 "completedBy": "username",
+                "comment": "",
+                "photos": ["url to photo 1", "url to photo 2"],
+                "photos_after": ["url to photo 1", "url to photo 2"]
+    
+            }},
+
+            {"marcin-timestamp2": { 
+                "id": "marcin-timestamp2",
+                "number": "A/12/22",
+                "status": "completed",
+                "location": "ground floor",
+                "locationOnDrawing": ["100", "2500"],
+                "materialsUsed": ["collar", "mastic"],
+                "measurements": ["150", "150"],
+                "service": ["pipe"],
+                "completedBy": "username",
+                "comment": "",
+                "photos": ["url to photo 1", "url to photo 2"],
+                "photos_after": ["url to photo 1", "url to photo 2"]
+    
+            }},
+
+            {"marcin-timestamp3": { 
+                "id": "marcin-timestamp3",
+                "number": "A/12/22",
+                "status": "toBeDone",
+                "location": "ground floor",
+                "locationOnDrawing": ["900", "800"],
+                "materialsUsed": ["collar", "mastic"],
+                "measurements": ["150", "150"],
+                "service": ["pipe"],
+                "completedBy": "username",
+                "comment": "",
                 "photos": ["url to photo 1", "url to photo 2"],
                 "photos_after": ["url to photo 1", "url to photo 2"]
     
@@ -54,12 +88,14 @@ run = async function(){
             {"carl-timestamp": { 
               "id": "carl-timestamp",
               "number": "B/12/22",
+              "status": "issue",
               "location": "first floor",
               "locationOnDrawing": ["200", "400"],
               "materialsUsed": ["firebatt", "mastic", "wrap"],
               "measurements": ["150", "150"],
               "service": ["duct", "cable"],
               "completedBy": "username",
+              "comment": "",
               "photos_before": ["url to photo 1", "url to photo 2"],
               "photos_after": ["url to photo 1", "url to photo 2"]
     
@@ -69,9 +105,9 @@ run = async function(){
 
      // project2
 
-     let project2 = db.collection('project2')
+     let medical_centre = db.collection('medical_centre')
 
-     let details2 = await project2.set('details', {
+     let details2 = await medical_centre.set('details', {
          
              "address": "some_address",
              "users": ["Adam", "Alexandr"],
@@ -79,25 +115,27 @@ run = async function(){
              "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
              "locations": [
                 {   "name": "basement",
-                    "url": "https://wpmedia.roomsketcher.com/content/uploads/2021/12/14164614/RoomSketcher-House-Floor-Plans-2452430-800.jpg"},
+                    "url": "project2-basement"},
                 {   "name": "second floor",
-                    "url": "https://wcs.smartdraw.com/floor-plan/img/floor-plan-design.png?bn=15100111860"}
+                    "url": "project2-second_floor"}
                 ]
            
      })
  
-     let markers2 = await project2.set('markers', {
+     let markers2 = await medical_centre.set('markers', {
          "markers": [
  
              {"alexandr-timestamp": { 
                  "id": "alexandr-timestamp",
                  "number": "A/12/22",
+                 "status": "completed",
                  "location": "basement",
                  "locationOnDrawing": ["800", "800"],
                  "materialsUsed": ["collar", "mastic"],
                  "measurements": ["150", "150"],
                  "service": ["pipe"],
                  "completedBy": "username",
+                 "comment": "",
                  "photos": ["url to photo 1", "url to photo 2"],
                  "photos_after": ["url to photo 1", "url to photo 2"]
      
@@ -106,12 +144,14 @@ run = async function(){
              {"adam-timestamp": { 
                "id": "adam-timestamp",
                "number": "B/12/22",
+               "status": "completed",
                "location": "second floor",
                "locationOnDrawing": ["100", "100"],
                "materialsUsed": ["firebatt", "mastic", "wrap"],
                "measurements": ["150", "150"],
                "service": ["duct", "cable"],
                "completedBy": "username",
+               "comment": "",
                "photos_before": ["url to photo 1", "url to photo 2"],
                "photos_after": ["url to photo 1", "url to photo 2"]
      
@@ -119,15 +159,15 @@ run = async function(){
          ]
      })
 
-     return 'done'
+     
 
-     //let itemTestUser = await users.get('test_user')
-    // let itemDetails1 = await project1.get('details')
-    // let itemMarkers1 = await project1.get('markers')
-     //let itemDetails2 = await project2.get('details')
-     //let itemMarkers2 = await project2.get('markers')
+     let itemTestUser = await users.get('test_user')
+     let itemDetails1 = await apartments_unit.get('details')
+     let itemMarkers1 = await apartments_unit.get('markers')
+     let itemDetails2 = await medical_centre.get('details')
+     let itemMarkers2 = await medical_centre.get('markers')
 
 
-     //console.log(itemTestUser, itemDetails1, itemMarkers1.props, itemDetails2, itemMarkers2)
+     console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
 run()
