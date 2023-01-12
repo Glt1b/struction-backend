@@ -23,7 +23,7 @@ const storage = async function (){
 */
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "marker3",
+        Key: "marker1",
     }).promise()
 
     //const buffer = Buffer.from(my_file, "base64");
