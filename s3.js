@@ -18,12 +18,12 @@ const storage = async function (){
 
     const del = await s3.deleteObject({
         Bucket: bucket,
-        Key: 'drawing'
+        Key: 'marker3'
     }).promise()
 */
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "example1",
+        Key: "marker3",
     }).promise()
 
     //const buffer = Buffer.from(my_file, "base64");

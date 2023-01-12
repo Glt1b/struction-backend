@@ -203,7 +203,7 @@ exports.postImageS3 = async (image_id, image) => {
 
 }
 
-exports.delImages3 = async (image_id) => {
+exports.delImageS3 = async (image_id) => {
     const image = await s3.deleteObject({
         Bucket: bucket,
         Key: image_id
