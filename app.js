@@ -15,6 +15,12 @@ const cors = require("cors");
 const app = express();
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json());
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+  next(); 
+})
 
 app.get("/api/users/:username", getUser);
 app.get("/api/projects/:project_name", getProject);
