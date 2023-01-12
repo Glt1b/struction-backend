@@ -12,14 +12,14 @@ run = async function(){
         "mail": "mail@gmail.com",
         "role": "worker",
         "password": "worker123",
-        "projects": ["apartments_unit", "medical_centre"]
+        "projects": ["apartments-unit", "medical-centre"]
     })
 
     // project1
 
-    let apartments_unit = db.collection('apartments_unit')
+    let apartments_unit_ = db.collection('apartments_unit_')
 
-    let details1 = await apartments_unit.set('details', {
+    let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
             "users": ["Marcin", "Carl"],
@@ -27,14 +27,14 @@ run = async function(){
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
                 {   "name": "ground floor",
-                    "url": "project1-ground_floor"},
+                    "url": "project1-ground-floor"},
                 {   "name": "first floor",
-                    "url": "project1-first_floor"}
+                    "url": "project1-first-floor"}
                 ]
           
     })
 
-    let markers1 = await apartments_unit.set('markers', {
+    let markers1 = await apartments_unit_.set('markers', {
         "markers": [
 
             {"marcin-timestamp1": { 
@@ -48,8 +48,8 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["url to photo 1", "url to photo 2"],
-                "photos_after": ["url to photo 1", "url to photo 2"]
+                "photos": ["marker1"],
+                "photos_after": ["url_1", "url_2"]
     
             }},
 
@@ -64,7 +64,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["url to photo 1", "url to photo 2"],
+                "photos": ["marker2"],
                 "photos_after": ["url to photo 1", "url to photo 2"]
     
             }},
@@ -80,7 +80,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["url to photo 1", "url to photo 2"],
+                "photos": ["marker3"],
                 "photos_after": ["url to photo 1", "url to photo 2"]
     
             }},
@@ -96,7 +96,7 @@ run = async function(){
               "service": ["duct", "cable"],
               "completedBy": "username",
               "comment": "",
-              "photos_before": ["url to photo 1", "url to photo 2"],
+              "photos": [],
               "photos_after": ["url to photo 1", "url to photo 2"]
     
           }}
@@ -105,9 +105,9 @@ run = async function(){
 
      // project2
 
-     let medical_centre = db.collection('medical_centre')
+     let medical_centre_ = db.collection('medical_centre_')
 
-     let details2 = await medical_centre.set('details', {
+     let details2 = await medical_centre_.set('details', {
          
              "address": "some_address",
              "users": ["Adam", "Alexandr"],
@@ -122,7 +122,7 @@ run = async function(){
            
      })
  
-     let markers2 = await medical_centre.set('markers', {
+     let markers2 = await medical_centre_.set('markers', {
          "markers": [
  
              {"alexandr-timestamp": { 
@@ -136,7 +136,7 @@ run = async function(){
                  "service": ["pipe"],
                  "completedBy": "username",
                  "comment": "",
-                 "photos": ["url to photo 1", "url to photo 2"],
+                 "photos": [],
                  "photos_after": ["url to photo 1", "url to photo 2"]
      
              }},
@@ -152,7 +152,7 @@ run = async function(){
                "service": ["duct", "cable"],
                "completedBy": "username",
                "comment": "",
-               "photos_before": ["url to photo 1", "url to photo 2"],
+               "photos": [],
                "photos_after": ["url to photo 1", "url to photo 2"]
      
            }}
@@ -162,10 +162,10 @@ run = async function(){
      
 
      let itemTestUser = await users.get('test_user')
-     let itemDetails1 = await apartments_unit.get('details')
-     let itemMarkers1 = await apartments_unit.get('markers')
-     let itemDetails2 = await medical_centre.get('details')
-     let itemMarkers2 = await medical_centre.get('markers')
+     let itemDetails1 = await apartments_unit_.get('details')
+     let itemMarkers1 = await apartments_unit_.get('markers')
+     let itemDetails2 = await medical_centre_.get('details')
+     let itemMarkers2 = await medical_centre_.get('markers')
 
 
      console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)

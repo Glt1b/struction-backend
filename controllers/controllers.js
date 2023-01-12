@@ -4,7 +4,7 @@ const { getUserDynamo,
     postMarkerDynamo,
     delMarkerDynamo,
     patchMarkerDynamo,
-    getDrawingDynamo,
+    getImageS3,
     postImageS3,
     delImageS3} = require('../models/models.js');
 
@@ -52,8 +52,10 @@ exports.patchMarker = (req, res) => {
     })
 }
 
-exports.getDrawing = (req, res) => {
-    getDrawingDynamo(req.params.image_id).then((result) => {
+// images
+
+exports.getImage = (req, res) => {
+    getImageS3(req.params.image_id).then((result) => {
         obj = {image: result}
         res.status(200).send(obj)
     })
@@ -61,8 +63,7 @@ exports.getDrawing = (req, res) => {
 
 exports.postImage = (req, res) => {
     postImageS3(req.params,image_id, req.body).then((result) => {
-        obj = {image: result}
-        res.status(200).send(obj)
+        res.status(201).send()
     })
 }
 

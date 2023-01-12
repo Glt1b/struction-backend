@@ -1,9 +1,10 @@
 const request = require('supertest');
 const app = require('../app');
+const fs = require('fs');
 
-const seed = require('../seed.js')
+// const seed = require('../seed.js')
 
-beforeEach(() => seed);
+// beforeEach(() => seed);
 
 describe('GET/api/users/:username', () => {
     test('200 - respond with user object', () => {
@@ -92,6 +93,8 @@ describe('PATCH/api/:project_name/:marker_id', () => {
     })
 })
 
+// images
+
 describe('GET/plan', () => {
     test('200 - respond with plan', () => {
         return request(app)
@@ -99,5 +102,17 @@ describe('GET/plan', () => {
         .expect(200)
 
     })
-
 })
+
+describe.only('POST/plan', () => {
+    test('200 - respond with plan', () => {
+        const image = fs.readFileSync('./photos/3.jpg')
+        const obj = {1: 'lalala'}
+        return request(app)
+         .post('/api/image/example1')
+         .send(obj)
+         .expect(200)
+
+    })
+})
+
