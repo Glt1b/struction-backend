@@ -22,7 +22,6 @@ app.get("/api/projects/:project_name", getProject);
 app.post("/api/markers/:project_name", postMarker);
 
 app.delete("/api/:project_name/:marker_id", delMarker);
-app.delete("/api/image/:image_id", delImage);
 
 app.patch("/api/:project_name/:marker_id", patchMarker);
 
