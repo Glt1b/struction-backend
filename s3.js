@@ -9,13 +9,13 @@ const image = fs.readFileSync('./photos/3.jpg')
 
 const storage = async function (){
 
-
+/*
     const uploadedImage = await s3.upload({
         Bucket: bucket,
         Key: 'marker3',
         Body: image,
       }).promise()
-/*
+
     const del = await s3.deleteObject({
         Bucket: bucket,
         Key: 'marker3'
@@ -23,7 +23,7 @@ const storage = async function (){
 */
     let my_file = await s3.getObject({
         Bucket: bucket,
-        Key: "marker3",
+        Key: "marcin-timestamp1-1673613486528",
     }).promise()
 
     //const buffer = Buffer.from(my_file, "base64");
