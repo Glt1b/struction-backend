@@ -15,6 +15,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors({origin: '*'}));
 app.use(express.json());
+app.use(bodyParser.json({limit: '5mb'}));
 
 app.use(function (req, res, next) {
 
