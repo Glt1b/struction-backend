@@ -195,7 +195,7 @@ exports.postImageS3 = async (image_id, image) => {
     const uploadedImage = await s3.upload({
         Bucket: bucket,
         Key: image_id,
-        Body: image,
+        Body: image.img,
       }).promise()
 
     return 'uploaded'
