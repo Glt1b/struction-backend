@@ -15,10 +15,9 @@ const cors = require("cors");
 const app = express();
 app.use(cors({origin: '*'}));
 app.use(express.json());
-app.use(bodyParser.json({limit: '5mb'}));
-
+// app.use(bodyParser.json({limit: '5mb'}));
+/*
 app.use(function (req, res, next) {
-
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -28,7 +27,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-
+*/
 
 app.get("/api/users/:username", getUser);
 app.get("/api/projects/:project_name", getProject);
