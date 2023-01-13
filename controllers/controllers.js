@@ -62,7 +62,7 @@ exports.getImage = (req, res) => {
 }
 
 exports.postImage = (req, res) => {
-    postImageS3(req.params,image_id, req.body).then((result) => {
+    postImageS3(req.params.image_id, req.body).then((result) => {
         res.status(201).send()
     })
 }
