@@ -48,7 +48,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["marker1"],
+                "photos": ["marker1", "marker2", "marker3"],
                 "photos_after": ["url_1", "url_2"]
     
             }},
