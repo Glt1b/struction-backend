@@ -8,11 +8,11 @@ run = async function(){
 
     let users = db.collection('users')
 
-    let test_user = await users.set('test_user', {
-        "mail": "mail@gmail.com",
-        "role": "worker",
+    let test_user = await users.set('m.palenik@gmail.com', {
+        "name": "Marcin Palenik",
+        "role": "manager",
         "password": "worker123",
-        "projects": ["apartments-unit", "medical-centre"]
+        "projects": ["apartments-unit_", "medical-centre_"]
     })
 
     // project1
@@ -27,9 +27,9 @@ run = async function(){
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
                 {   "name": "ground floor",
-                    "url": "project1-ground-floor"},
+                    "url": "apartments-ground-floor"},
                 {   "name": "first floor",
-                    "url": "project1-first-floor"}
+                    "url": "apartments-first-floor"}
                 ]
           
     })
@@ -64,7 +64,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["marker2"],
+                "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"]
     
             }},
@@ -80,7 +80,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["marker3"],
+                "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"]
     
             }},
@@ -97,7 +97,7 @@ run = async function(){
               "completedBy": "username",
               "comment": "",
               "photos": [],
-              "photos_after": ["url to photo 1", "url to photo 2"]
+              "photos_after": []
     
           }}
         ]

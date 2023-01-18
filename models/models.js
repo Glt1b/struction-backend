@@ -10,6 +10,9 @@ exports.getUserDynamo = async (username) => {
     let users = db.collection('users');
     let user = await users.get(username);
     return user
+    .catch((err) => {
+        return err
+    })
 };
 
 exports.getProjectDynamo = async (project_name) => {
