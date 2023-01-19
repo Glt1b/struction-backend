@@ -18,7 +18,7 @@ const app = express();
 app.use(express.json({limit: '5mb'}));
 // app.use(bodyParser.json({limit: '5mb'}));
 
- /* 
+ /* */
 app.use(function (req, res, next) {
 
   res.setHeader('Access-Control-Allow-Origin', *);
