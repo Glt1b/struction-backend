@@ -5,7 +5,7 @@ const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
 run = async function(){
 
     // users
-
+    /*
     let users = db.collection('users')
 
     let test_user = await users.set('m.palenik@gmail.com', {
@@ -16,9 +16,9 @@ run = async function(){
     })
 
     // project1
-
+    */
     let apartments_unit_ = db.collection('apartments_unit_')
-
+    /*
     let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
@@ -158,16 +158,16 @@ run = async function(){
            }}
          ]
      })
-
+    */
      
 
-     let itemTestUser = await users.get('test_user')
+    // let itemTestUser = await users.get('test_user')
      let itemDetails1 = await apartments_unit_.get('details')
      let itemMarkers1 = await apartments_unit_.get('markers')
-     let itemDetails2 = await medical_centre_.get('details')
-     let itemMarkers2 = await medical_centre_.get('markers')
+     //let itemDetails2 = await medical_centre_.get('details')
+     //let itemMarkers2 = await medical_centre_.get('markers')
 
-
-     console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
+     console.log(itemDetails1, itemMarkers1)
+     //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
 run()
