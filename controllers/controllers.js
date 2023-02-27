@@ -8,7 +8,6 @@ const { getUserDynamo,
     postImageS3,
     delImageS3} = require('../models/models.js');
 
-const { run } = require('../seed.js')
 
 exports.getUser = (req, res) => {
     getUserDynamo(req.params.username).then((result) => {

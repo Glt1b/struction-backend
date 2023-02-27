@@ -5,20 +5,20 @@ const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
 run = async function(){
 
     // users
-    /*
+ 
     let users = db.collection('users')
 
     let test_user = await users.set('m.palenik@gmail.com', {
         "name": "Marcin Palenik",
         "role": "manager",
         "password": "worker123",
-        "projects": ["apartments-unit_", "medical-centre_"]
+        "projects": ["apartments_unit_", "medical_centre_"]
     })
 
     // project1
-    */
+
     let apartments_unit_ = db.collection('apartments_unit_')
-    /*
+    
     let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
@@ -26,10 +26,11 @@ run = async function(){
             "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
-                {   "name": "ground floor",
-                    "url": "apartments-ground-floor"},
-                {   "name": "first floor",
-                    "url": "apartments-first-floor"}
+                {"name": "ground floor",
+                 "url": "apartments-ground-floor"},
+                 ,
+            {   "name": "first floor",
+                "url": "apartments-first-floor"}
                 ]
           
     })
@@ -48,7 +49,7 @@ run = async function(){
                 "service": ["pipe"],
                 "completedBy": "username",
                 "comment": "",
-                "photos": ["marker1"],
+                "photos": [],
                 "photos_after": ["url_1", "url_2"]
     
             }},
@@ -158,16 +159,16 @@ run = async function(){
            }}
          ]
      })
-    */
+    
      
 
     // let itemTestUser = await users.get('test_user')
      let itemDetails1 = await apartments_unit_.get('details')
-     let itemMarkers1 = await apartments_unit_.get('markers')
+     //let itemMarkers1 = await apartments_unit_.get('markers')
      //let itemDetails2 = await medical_centre_.get('details')
      //let itemMarkers2 = await medical_centre_.get('markers')
 
-     console.log(itemDetails1, itemMarkers1)
+     console.log(itemDetails1.props.locations)
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
 run()
