@@ -68,6 +68,6 @@ exports.postImage = (req, res) => {
 
 exports.delImage = (req, res) => {
     delImageS3(req.params.image_id).then((result) => {
-        res.status(204)
+        res.status(204).send()
     })
 }
