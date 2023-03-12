@@ -50,7 +50,8 @@ run = async function(){
                 "completedBy": "username",
                 "comment": "",
                 "photos": [],
-                "photos_after": ["url_1", "url_2"]
+                "photos_after": ["url_1", "url_2"],
+                "FR": '30'
     
             }},
 
@@ -66,7 +67,8 @@ run = async function(){
                 "completedBy": "username",
                 "comment": "",
                 "photos": [],
-                "photos_after": ["url to photo 1", "url to photo 2"]
+                "photos_after": ["url to photo 1", "url to photo 2"],
+                "FR": '30'
     
             }},
 
@@ -82,7 +84,8 @@ run = async function(){
                 "completedBy": "username",
                 "comment": "",
                 "photos": [],
-                "photos_after": ["url to photo 1", "url to photo 2"]
+                "photos_after": ["url to photo 1", "url to photo 2"],
+                "FR": '30'
     
             }},
     
@@ -98,7 +101,8 @@ run = async function(){
               "completedBy": "username",
               "comment": "",
               "photos": [],
-              "photos_after": []
+              "photos_after": [],
+              "FR": '30'
     
           }}
         ]
@@ -138,7 +142,8 @@ run = async function(){
                  "completedBy": "username",
                  "comment": "",
                  "photos": [],
-                 "photos_after": ["url to photo 1", "url to photo 2"]
+                 "photos_after": ["url to photo 1", "url to photo 2"],
+                 "FR": '30'
      
              }},
      
@@ -154,7 +159,8 @@ run = async function(){
                "completedBy": "username",
                "comment": "",
                "photos": [],
-               "photos_after": ["url to photo 1", "url to photo 2"]
+               "photos_after": ["url to photo 1", "url to photo 2"],
+               "FR": '30'
      
            }}
          ]
