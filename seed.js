@@ -51,7 +51,7 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url_1", "url_2"],
-                "FR": '30'
+                "fR": '30'
     
             }},
 
@@ -68,7 +68,7 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"],
-                "FR": '30'
+                "fR": '30'
     
             }},
 
@@ -85,7 +85,7 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"],
-                "FR": '30'
+                "fR": '30'
     
             }},
     
@@ -102,7 +102,7 @@ run = async function(){
               "comment": "",
               "photos": [],
               "photos_after": [],
-              "FR": '30'
+              "fR": '30'
     
           }}
         ]
@@ -143,7 +143,7 @@ run = async function(){
                  "comment": "",
                  "photos": [],
                  "photos_after": ["url to photo 1", "url to photo 2"],
-                 "FR": '30'
+                 "fR": '30'
      
              }},
      
@@ -160,7 +160,7 @@ run = async function(){
                "comment": "",
                "photos": [],
                "photos_after": ["url to photo 1", "url to photo 2"],
-               "FR": '30'
+               "fR": '30'
      
            }}
          ]
