@@ -1,10 +1,13 @@
 
+import FormDataEncoder from 'form-data-encoder';
+
 process.env.CYCLIC_DB = 'https://struction-backend.cyclic.app'
 const CyclicDB = require('@cyclic.sh/dynamodb')
 const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
 const AWS = require("aws-sdk");
 const s3 = new AWS.S3()
 const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
+
 
 exports.getUserDynamo = async (username) => {
     let users = db.collection('users');
@@ -193,10 +196,15 @@ exports.getImageS3 = async (image_id) => {
 }
 
 exports.postImageS3 = async (image_id, image) => {
+
+    const encoder = new FormDataEncoder();
+    const buffer = encoder.encode(image);
+
+
     const uploadedImage = await s3.upload({
         Bucket: bucket,
         Key: image_id,
-        Body: image.img,
+        Body: buffer,
       }).promise()
 
     return 'uploaded'
