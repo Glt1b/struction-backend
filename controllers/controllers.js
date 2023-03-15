@@ -61,8 +61,8 @@ exports.getImage = (req, res) => {
 }
 
 exports.postImage = (req, res) => {
-    const buffer = req.files.file.data;
-    postImageS3(req.params.image_id, buffer).then((result) => {
+
+    postImageS3(req.params.image_id, req.body).then((result) => {
         res.status(201).send()
     })
 }
