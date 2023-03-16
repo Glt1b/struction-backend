@@ -16,8 +16,8 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({origin: '*'}));
-app.use(express.json({limit: '10mb'}));
-//app.use(bodyParser.json({limit: '10mb'}));
+//app.use(express.json({limit: '10mb'}));
+app.use(bodyParser.json({limit: '10mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
  /* 
