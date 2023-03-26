@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const multer = require('multer');
 
 const {
   getUser,
@@ -15,7 +14,6 @@ const {
 
 const cors = require("cors");
 const app = express();
-const upload = multer();
 
 app.use(cors({origin: '*'}));
 //app.use(express.json({limit: '10mb'}));
@@ -46,7 +44,7 @@ app.delete("/api/markers/:project_name/:marker_id", delMarker);
 app.patch("/api/markers/:project_name/:marker_id", patchMarker);
 
 // images
-app.post("/api/image/:image_id", upload.single('file'), postImage);
+app.post("/api/image/:image_id", postImage);
 app.get("/api/image/:image_id", getImage);
 app.delete("/api/image/:image_id", delImage);
 
