@@ -51,7 +51,8 @@ exports.getProjectDynamo = async (project_name) => {
             frameCondition: marker[key].frameCondition,
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
-            ironmongery: marker[key].ironmongery
+            ironmongery: marker[key].ironmongery,
+            type: marker[key].type
         }
 
         markersToSend.push(mrk)
@@ -103,7 +104,8 @@ exports.postMarkerDynamo = async (project_name, marker) => {
             frameCondition: marker[key].frameCondition,
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
-            ironmongery: marker[key].ironmongery
+            ironmongery: marker[key].ironmongery,
+            type: marker[key].type
         }
 
         markersToSend.push(mrk)
@@ -163,7 +165,8 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
             frameCondition: marker[key].frameCondition,
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
-            ironmongery: marker[key].ironmongery
+            ironmongery: marker[key].ironmongery,
+            type: marker[key].type
         }
 
         markersToSend.push(mrk)
