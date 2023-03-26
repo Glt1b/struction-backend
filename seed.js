@@ -51,7 +51,20 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url_1", "url_2"],
-                "fR": '30'
+                "fR": '30',
+                "type": "seal",
+                "doorConfiguration": '',
+                "doorFinish": '',
+                "doorGapHinge": '',
+                "doorGapLockSide": '',
+                "doorGapHead": '',
+                "doorGapBottom": '',
+                "openingHeight": '',
+                "visionPanel": '',
+                "frameCondition": '',
+                "frameConditionComment": '',
+                "hingeAdjustment": '',
+                "ironmongery": ''
     
             }},
 
@@ -68,7 +81,20 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"],
-                "fR": '30'
+                "fR": '30',
+                "type": "seal",
+                "doorConfiguration": '',
+                "doorFinish": '',
+                "doorGapHinge": '',
+                "doorGapLockSide": '',
+                "doorGapHead": '',
+                "doorGapBottom": '',
+                "openingHeight": '',
+                "visionPanel": '',
+                "frameCondition": '',
+                "frameConditionComment": '',
+                "hingeAdjustment": '',
+                "ironmongery": ''
     
             }},
 
@@ -85,7 +111,20 @@ run = async function(){
                 "comment": "",
                 "photos": [],
                 "photos_after": ["url to photo 1", "url to photo 2"],
-                "fR": '30'
+                "fR": '30',
+                "type": "seal",
+                "doorConfiguration": '',
+                "doorFinish": '',
+                "doorGapHinge": '',
+                "doorGapLockSide": '',
+                "doorGapHead": '',
+                "doorGapBottom": '',
+                "openingHeight": '',
+                "visionPanel": '',
+                "frameCondition": '',
+                "frameConditionComment": '',
+                "hingeAdjustment": '',
+                "ironmongery": ''
     
             }},
     
@@ -102,7 +141,20 @@ run = async function(){
               "comment": "",
               "photos": [],
               "photos_after": [],
-              "fR": '30'
+              "fR": '30',
+              "type": "seal",
+              "doorConfiguration": '',
+              "doorFinish": '',
+              "doorGapHinge": '',
+              "doorGapLockSide": '',
+              "doorGapHead": '',
+              "doorGapBottom": '',
+              "openingHeight": '',
+              "visionPanel": '',
+              "frameCondition": '',
+              "frameConditionComment": '',
+              "hingeAdjustment": '',
+              "ironmongery": ''
     
           }}
         ]
@@ -143,7 +195,20 @@ run = async function(){
                  "comment": "",
                  "photos": [],
                  "photos_after": ["url to photo 1", "url to photo 2"],
-                 "fR": '30'
+                 "fR": '30',
+                 "type": "seal",
+                 "doorConfiguration": '',
+                 "doorFinish": '',
+                 "doorGapHinge": '',
+                 "doorGapLockSide": '',
+                 "doorGapHead": '',
+                 "doorGapBottom": '',
+                 "openingHeight": '',
+                 "visionPanel": '',
+                 "frameCondition": '',
+                 "frameConditionComment": '',
+                 "hingeAdjustment": '',
+                 "ironmongery": ''
      
              }},
      
@@ -160,7 +225,20 @@ run = async function(){
                "comment": "",
                "photos": [],
                "photos_after": ["url to photo 1", "url to photo 2"],
-               "fR": '30'
+               "fR": '30',
+               "type": "seal",
+               "doorConfiguration": '',
+               "doorFinish": '',
+               "doorGapHinge": '',
+               "doorGapLockSide": '',
+               "doorGapHead": '',
+               "doorGapBottom": '',
+               "openingHeight": '',
+               "visionPanel": '',
+               "frameCondition": '',
+               "frameConditionComment": '',
+               "hingeAdjustment": '',
+               "ironmongery": ''
      
            }}
          ]
