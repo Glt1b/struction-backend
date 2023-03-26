@@ -39,14 +39,14 @@ app.use(function (req, res, next) {
 app.get("/api/users/:username", getUser);
 app.get("/api/projects/:project_name", getProject);
 
-app.post("/api/markers/:project_name", upload.single('file'), postMarker);
+app.post("/api/markers/:project_name", postMarker);
 
 app.delete("/api/markers/:project_name/:marker_id", delMarker);
 
 app.patch("/api/markers/:project_name/:marker_id", patchMarker);
 
 // images
-app.post("/api/image/:image_id", postImage);
+app.post("/api/image/:image_id", upload.single('file'), postImage);
 app.get("/api/image/:image_id", getImage);
 app.delete("/api/image/:image_id", delImage);
 
