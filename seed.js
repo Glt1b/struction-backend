@@ -54,7 +54,6 @@ run = async function(){
                 "fR": '30',
                 "type": "seal",
                 "doorConfiguration": '',
-                "doorFinish": '',
                 "doorGapHinge": '',
                 "doorGapLockSide": '',
                 "doorGapHead": '',
@@ -64,7 +63,11 @@ run = async function(){
                 "frameCondition": '',
                 "frameConditionComment": '',
                 "hingeAdjustment": '',
-                "ironmongery": ''
+                "ironmongery": '',
+                "handle": '',
+                "lock": '',
+                "doorCondition": ''
+
     
             }},
 
@@ -84,7 +87,6 @@ run = async function(){
                 "fR": '30',
                 "type": "seal",
                 "doorConfiguration": '',
-                "doorFinish": '',
                 "doorGapHinge": '',
                 "doorGapLockSide": '',
                 "doorGapHead": '',
@@ -94,7 +96,10 @@ run = async function(){
                 "frameCondition": '',
                 "frameConditionComment": '',
                 "hingeAdjustment": '',
-                "ironmongery": ''
+                "ironmongery": '',
+                "handle": '',
+                "lock": '',
+                "doorCondition": ''
     
             }},
 
@@ -114,7 +119,6 @@ run = async function(){
                 "fR": '30',
                 "type": "seal",
                 "doorConfiguration": '',
-                "doorFinish": '',
                 "doorGapHinge": '',
                 "doorGapLockSide": '',
                 "doorGapHead": '',
@@ -124,7 +128,10 @@ run = async function(){
                 "frameCondition": '',
                 "frameConditionComment": '',
                 "hingeAdjustment": '',
-                "ironmongery": ''
+                "ironmongery": '',
+                "handle": '',
+                "lock": '',
+                "doorCondition": ''
     
             }},
     
@@ -144,7 +151,6 @@ run = async function(){
               "fR": '30',
               "type": "seal",
               "doorConfiguration": '',
-              "doorFinish": '',
               "doorGapHinge": '',
               "doorGapLockSide": '',
               "doorGapHead": '',
@@ -154,7 +160,10 @@ run = async function(){
               "frameCondition": '',
               "frameConditionComment": '',
               "hingeAdjustment": '',
-              "ironmongery": ''
+              "ironmongery": '',
+              "handle": '',
+              "lock": '',
+              "doorCondition": ''
     
           }}
         ]
@@ -198,7 +207,6 @@ run = async function(){
                  "fR": '30',
                  "type": "seal",
                  "doorConfiguration": '',
-                 "doorFinish": '',
                  "doorGapHinge": '',
                  "doorGapLockSide": '',
                  "doorGapHead": '',
@@ -208,7 +216,10 @@ run = async function(){
                  "frameCondition": '',
                  "frameConditionComment": '',
                  "hingeAdjustment": '',
-                 "ironmongery": ''
+                 "ironmongery": '',
+                 "handle": '',
+                 "lock": '',
+                 "doorCondition": ''
      
              }},
      
@@ -228,7 +239,6 @@ run = async function(){
                "fR": '30',
                "type": "seal",
                "doorConfiguration": '',
-               "doorFinish": '',
                "doorGapHinge": '',
                "doorGapLockSide": '',
                "doorGapHead": '',
@@ -238,7 +248,10 @@ run = async function(){
                "frameCondition": '',
                "frameConditionComment": '',
                "hingeAdjustment": '',
-               "ironmongery": ''
+               "ironmongery": '',
+               "handle": '',
+               "lock": '',
+               "doorCondition": ''
      
            }}
          ]

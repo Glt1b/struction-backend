@@ -52,7 +52,10 @@ exports.getProjectDynamo = async (project_name) => {
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
             ironmongery: marker[key].ironmongery,
-            type: marker[key].type
+            type: marker[key].type,
+            handle: marker[key].handle,
+            lock: marker[key].lock,
+            doorCondition: marker[key].doorCondition
         }
 
         markersToSend.push(mrk)
@@ -105,7 +108,10 @@ exports.postMarkerDynamo = async (project_name, marker) => {
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
             ironmongery: marker[key].ironmongery,
-            type: marker[key].type
+            type: marker[key].type,
+            handle: marker[key].handle,
+            lock: marker[key].lock,
+            doorCondition: marker[key].doorCondition
         }
 
         markersToSend.push(mrk)
@@ -166,7 +172,10 @@ exports.delMarkerDynamo = async (project_name, marker_id) => {
             frameConditionComment: marker[key].frameConditionComment,
             hingeAdjustment: marker[key].hingeAdjustment,
             ironmongery: marker[key].ironmongery,
-            type: marker[key].type
+            type: marker[key].type,
+            handle: marker[key].handle,
+            lock: marker[key].lock,
+            doorCondition: marker[key].doorCondition
         }
 
         markersToSend.push(mrk)
@@ -213,7 +222,23 @@ exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
             comment: marker[key].comment,
             status: marker[key].status,
             photos: marker[key].photos,
-            fR: marker[key].fR
+            fR: marker[key].fR,
+            doorConfiguration: marker[key].doorConfiguration,
+            doorFinish: marker[key].doorFinish,
+            doorGapHinge: marker[key].doorGapHinge,
+            doorGapLockSide: marker[key].doorGapLockSide,
+            doorGapHead: marker[key].doorGapHead,
+            doorGapBottom: marker[key].doorGapBottom,
+            openingHeight: marker[key].openingHeight,
+            visionPanel: marker[key].visionPanel,
+            frameCondition: marker[key].frameCondition,
+            frameConditionComment: marker[key].frameConditionComment,
+            hingeAdjustment: marker[key].hingeAdjustment,
+            ironmongery: marker[key].ironmongery,
+            type: marker[key].type,
+            handle: marker[key].handle,
+            lock: marker[key].lock,
+            doorCondition: marker[key].doorCondition
         }
 
         markersToSend.push(mrk)
