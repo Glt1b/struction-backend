@@ -12,7 +12,7 @@ run = async function(){
         "name": "Marcin Palenik",
         "role": "manager",
         "password": "worker123",
-        "projects": ["apartments_unit_", "medical_centre_"]
+        "code": ""
     })
 
     // project1
@@ -22,7 +22,7 @@ run = async function(){
     let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
-            "users": ["Marcin", "Carl"],
+            "users": ["Marcin Palenik"],
             "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
@@ -259,7 +259,7 @@ run = async function(){
     
      
 
-    // let itemTestUser = await users.get('test_user')
+     //let itemTestUser = await users.get('test_user')
      let itemDetails1 = await apartments_unit_.get('details')
      //let itemMarkers1 = await apartments_unit_.get('markers')
      //let itemDetails2 = await medical_centre_.get('details')

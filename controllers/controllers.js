@@ -6,7 +6,9 @@ const { getUserDynamo,
     patchMarkerDynamo,
     getImageS3,
     postImageS3,
-    delImageS3} = require('../models/models.js');
+    delImageS3,
+    postUserDynamo,
+    deleteUserDynamo} = require('../models/models.js');
 
 
 exports.getUser = (req, res) => {
@@ -16,6 +18,19 @@ exports.getUser = (req, res) => {
         } else {
         res.status(200).send({user: result})
         }
+    })
+}
+
+exports.postUser = (req, res) => {
+    postUserDynamo(req.params.username, req.body.data).then((result) => {
+        const obj = {user: result}
+        res.status(200).send(obj)
+    })
+}
+
+exports.deleteUser = (req, res) => {
+    deleteUserDynamo(req.params.username).then(() => {
+        res.status(204).send()
     })
 }
 

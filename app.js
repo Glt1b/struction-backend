@@ -9,7 +9,9 @@ const {
   patchMarker,
   postImage,
   delImage,
-  getImage
+  getImage,
+  postUser,
+  deleteUser
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -34,7 +36,7 @@ app.use(function (req, res, next) {
 });
 */
 
-app.get("/api/users/:username", getUser);
+
 app.get("/api/projects/:project_name", getProject);
 
 app.post("/api/markers/:project_name", postMarker);
@@ -47,6 +49,11 @@ app.patch("/api/markers/:project_name/:marker_id", patchMarker);
 app.post("/api/image/:image_id", postImage);
 app.get("/api/image/:image_id", getImage);
 app.delete("/api/image/:image_id", delImage);
+
+// users
+app.get("/api/users/:username", getUser);
+app.post("/api/users/:username", postUser);
+app.delete("/api/users/username", deleteUser);
 
 // error handling
 
