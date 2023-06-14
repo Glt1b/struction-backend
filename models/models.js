@@ -25,7 +25,19 @@ exports.postUserDynamo = async (username, body) => {
 
 exports.deleteUserDynamo = async (username) => {
     let users = db.collection('users');
-    let user = await users.delete('username');
+    let user = await users.delete(username);
+}
+
+exports.getUsersListDynamo = async () => {
+    let users= db.collection('users');
+    let list = await users.get('users');
+    return list;
+}
+
+exports.postUsersListDynamo = async (obj) => {
+    let users = db.collection('users');
+    let list = await users.set('users', obj);
+    return obj;
 }
 
 exports.getProjectDynamo = async (project_name) => {

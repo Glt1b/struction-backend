@@ -8,7 +8,9 @@ const { getUserDynamo,
     postImageS3,
     delImageS3,
     postUserDynamo,
-    deleteUserDynamo} = require('../models/models.js');
+    deleteUserDynamo,
+    postUsersListDynamo,
+    getUsersListDynamo} = require('../models/models.js');
 
 
 exports.getUser = (req, res) => {
@@ -16,7 +18,7 @@ exports.getUser = (req, res) => {
         if(result ===  null){
             res.status(404).send({msg: 'User not found'})
         } else {
-        res.status(200).send({user: result})
+        res.status(200).send({users: result})
         }
     })
 }
@@ -31,6 +33,18 @@ exports.postUser = (req, res) => {
 exports.deleteUser = (req, res) => {
     deleteUserDynamo(req.params.username).then(() => {
         res.status(204).send()
+    })
+}
+
+exports.getUsersList = (req, res) => {
+    getUsersListDynamo().then((result) => {
+        res.ststus(200).send({list: result})
+    })
+}
+
+exports.postUsersList = (req, res) => {
+    postUsersListDynamo(req.body.data).then((result) => {
+        res.status(200).send({list: result})
     })
 }
 

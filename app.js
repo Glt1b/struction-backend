@@ -11,7 +11,9 @@ const {
   delImage,
   getImage,
   postUser,
-  deleteUser
+  deleteUser,
+  getUsersList,
+  postUsersList
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -51,6 +53,10 @@ app.get("/api/image/:image_id", getImage);
 app.delete("/api/image/:image_id", delImage);
 
 // users
+
+app.get("/api/users", getUsersList);
+app.post("/api/users", postUsersList);
+
 app.get("/api/users/:username", getUser);
 app.post("/api/users/:username", postUser);
 app.delete("/api/users/username", deleteUser);

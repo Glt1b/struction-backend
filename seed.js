@@ -8,11 +8,16 @@ run = async function(){
  
     let users = db.collection('users')
 
+    let usersList = await users.set('users', {
+        "users": ['m.palenik@gmail.com']
+    })
+
     let test_user = await users.set('m.palenik@gmail.com', {
         "name": "Marcin Palenik",
         "role": "manager",
         "password": "worker123",
-        "code": ""
+        "code": "",
+        "projects": ["apartments_unit_", "medical_centre_"]
     })
 
     // project1
@@ -260,12 +265,12 @@ run = async function(){
      
 
      //let itemTestUser = await users.get('test_user')
-     let itemDetails1 = await apartments_unit_.get('details')
+     let list = await users.get('users')
      //let itemMarkers1 = await apartments_unit_.get('markers')
      //let itemDetails2 = await medical_centre_.get('details')
      //let itemMarkers2 = await medical_centre_.get('markers')
 
-     console.log(itemDetails1.props.locations)
+     console.log(list)
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
 run()
