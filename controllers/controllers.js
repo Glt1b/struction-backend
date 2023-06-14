@@ -38,7 +38,7 @@ exports.deleteUser = (req, res) => {
 
 exports.getUsersList = (req, res) => {
     getUsersListDynamo().then((result) => {
-        res.ststus(200).send({list: result})
+        res.status(200).send({list: result})
     })
 }
 
