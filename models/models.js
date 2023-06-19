@@ -17,6 +17,8 @@ exports.getUserDynamo = async (username) => {
 };
 
 exports.postUserDynamo = async (username, body) => {
+    console.log(username)
+    console.log(body)
     let users = db.collection('users');
     let user = await users.set(username, body)
     return 'done'
