@@ -25,6 +25,7 @@ exports.getUser = (req, res) => {
 
 exports.postUser = (req, res) => {
     postUserDynamo(req.params.username, req.body.data).then((result) => {
+        console.log(req.body)
         res.status(200).send('done')
     })
 }
