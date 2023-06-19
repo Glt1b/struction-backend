@@ -273,4 +273,4 @@ run = async function(){
      console.log(list)
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
-run()
+//run()
