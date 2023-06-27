@@ -261,6 +261,59 @@ run = async function(){
            }}
          ]
      })
+
+         // project1
+
+    let hospital = db.collection("Macclesfield_District_General_Hospital")
+    
+    let details3 = await hospital.set('details', {
+        
+            "address": "Macclesfield",
+            "users": ["Marcin Palenik"],
+            "materials": ["Mastic", "Batt and Mastic"],
+            "services": ["Duct", "Cable Tray", "Void", "Joints", "exposed screwes"],
+            "locations": [
+                {"name": "ground floor",
+                 "url": "Macclesfield_District_General_Hospital-ground_floor"},
+                 
+                ]
+          
+    })
+
+    let markers3 = await hospital.set('markers', {
+        "markers": [
+            {"adam-timestamp": { 
+            "id": "adam-timestamp",
+            "number": "B/12/22",
+            "status": "completed",
+            "location": "second floor",
+            "locationOnDrawing": ["100", "100"],
+            "materialsUsed": ["firebatt", "mastic", "wrap"],
+            "measurements": ["150", "150"],
+            "service": ["duct", "cable"],
+            "completedBy": "username",
+            "comment": "",
+            "photos": [],
+            "photos_after": ["url to photo 1", "url to photo 2"],
+            "fR": '30',
+            "type": "seal",
+            "doorConfiguration": '',
+            "doorGapHinge": '',
+            "doorGapLockSide": '',
+            "doorGapHead": '',
+            "doorGapBottom": '',
+            "openingHeight": '',
+            "visionPanel": '',
+            "frameCondition": '',
+            "frameConditionComment": '',
+            "hingeAdjustment": '',
+            "ironmongery": '',
+            "handle": '',
+            "lock": '',
+            "doorCondition": ''
+  
+        }}]
+    })
     
      
 

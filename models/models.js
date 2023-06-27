@@ -38,6 +38,7 @@ exports.getUsersListDynamo = async () => {
 
 exports.postUsersListDynamo = async (obj) => {
     let users = db.collection('users');
+    console.log(obj)
     let list = await users.set('users', obj);
     return obj;
 }

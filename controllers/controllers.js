@@ -43,7 +43,7 @@ exports.getUsersList = (req, res) => {
 }
 
 exports.postUsersList = (req, res) => {
-    postUsersListDynamo(req.body.data).then((result) => {
+    postUsersListDynamo(req.body).then((result) => {
         res.status(200).send({list: result})
     })
 }
