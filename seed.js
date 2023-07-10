@@ -20,6 +20,14 @@ run = async function(){
         "projects": ["apartments_unit_", "medical_centre_"]
     })
 
+    // list of projects
+
+    let projects = db.collection('projects')
+
+    let projectsList = await projects.set('projects', {
+        "list": ['project 1', 'project 2']
+    })
+
     // project1
 
     let apartments_unit_ = db.collection('apartments_unit_')
@@ -326,4 +334,5 @@ run = async function(){
      console.log(list)
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
+
 //run()

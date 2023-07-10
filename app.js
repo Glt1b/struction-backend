@@ -13,7 +13,9 @@ const {
   postUser,
   deleteUser,
   getUsersList,
-  postUsersList
+  postUsersList,
+  getProjectsList,
+  postProjectsList
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -38,6 +40,13 @@ app.use(function (req, res, next) {
 });
 */
 
+// setup projects
+
+app.get("/api/projects", getProjectsList);
+
+app.post("/api/projects", postProjectsList);
+
+// project data
 
 app.get("/api/projects/:project_name", getProject);
 

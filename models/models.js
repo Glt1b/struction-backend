@@ -9,6 +9,21 @@ const s3 = new AWS.S3()
 const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
 
 
+// setup project
+
+exports.getProjectsListDynamo = async () => {
+    let projects = db.collection('projects');
+    let getProjects = await projects.get(list);
+    return getProjects
+}
+
+exports.postProjectsListDynamo = async (newList) => {
+    let projects = db.collection('projects');
+    let postProjects = await projects.set('list', newList)
+}
+
+// users
+
 exports.getUserDynamo = async (username) => {
     let users = db.collection('users');
     let user = await users.get(username);
