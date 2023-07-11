@@ -111,7 +111,7 @@ exports.getProjectDynamo = async (project_name) => {
 
 exports.postProjectDynamo = async (project_name, body) => {
     let project = db.collection(project_name);
-    let post = await project.set('detais', body)
+    let post = await project.set('details', body)
 }
 
 exports.postMarkerDynamo = async (project_name, marker) => {
