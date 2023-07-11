@@ -12,7 +12,8 @@ const { getUserDynamo,
     postUsersListDynamo,
     getUsersListDynamo,
     getProjectsListDynamo,
-    postProjectsListDynamo} = require('../models/models.js');
+    postProjectsListDynamo,
+    postProjectDynamo} = require('../models/models.js');
 
 // setup project
 
@@ -63,6 +64,8 @@ exports.postUsersList = (req, res) => {
     })
 }
 
+// project details
+
 exports.getProject = (req, res) => {
     getProjectDynamo(req.params.project_name).then((result) => {
         if(result.project[0] ===  null ){
@@ -70,6 +73,12 @@ exports.getProject = (req, res) => {
         } else {
             res.status(200).send({result})
         }
+    })
+}
+
+exports.postProject = (req, res) => {
+    postProjectDynamo(req.params.project_name, req.body).then(() => {
+        res.status(201).send({msg: 'updated'})
     })
 }
 

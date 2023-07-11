@@ -58,6 +58,8 @@ exports.postUsersListDynamo = async (obj) => {
     return obj;
 }
 
+// project details
+
 exports.getProjectDynamo = async (project_name) => {
     let project = db.collection(project_name);
     let details = await project.get('details');
@@ -105,6 +107,11 @@ exports.getProjectDynamo = async (project_name) => {
 
     const obj = {project: [details, markersToSend]};
     return obj
+}
+
+exports.postProjectDynamo = async (project_name, body) => {
+    let project = db.collection(project_name);
+    let post = await project.set('detais', body)
 }
 
 exports.postMarkerDynamo = async (project_name, marker) => {

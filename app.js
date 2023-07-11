@@ -15,7 +15,8 @@ const {
   getUsersList,
   postUsersList,
   getProjectsList,
-  postProjectsList
+  postProjectsList,
+  postProject
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -43,18 +44,16 @@ app.use(function (req, res, next) {
 // setup projects
 
 app.get("/api/projects", getProjectsList);
-
 app.post("/api/projects", postProjectsList);
 
 // project data
 
 app.get("/api/projects/:project_name", getProject);
-
+app.post("/api/projects/:project_name", postProject);
 app.post("/api/markers/:project_name", postMarker);
-
 app.delete("/api/markers/:project_name/:marker_id", delMarker);
-
 app.patch("/api/markers/:project_name/:marker_id", patchMarker);
+
 
 // images
 app.post("/api/image/:image_id", postImage);
