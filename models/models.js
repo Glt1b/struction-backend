@@ -13,7 +13,7 @@ const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
 
 exports.getProjectsListDynamo = async () => {
     let projects = db.collection('projects');
-    let getProjects = await projects.get(list);
+    let getProjects = await projects.get('list');
     return getProjects
 }
 
