@@ -24,7 +24,7 @@ run = async function(){
 
     let projects = db.collection('projects')
 
-    let projectsList = await projects.set('projects', {
+    let projectsList = await projects.set('list', {
         "list": ['project 1', 'project 2']
     })
 
