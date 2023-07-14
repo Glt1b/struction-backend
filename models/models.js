@@ -11,6 +11,13 @@ const bucket = 'cyclic-tan-outrageous-ostrich-eu-central-1'
 
 // setup project
 
+exports.setupMarkersDynamo = async (project_name) => {
+    let project = db.collection(project_name);
+    let setup = await project.set('markers', {
+        'markers': []
+    })
+}
+
 exports.getProjectsListDynamo = async () => {
     let projects = db.collection('projects');
     let getProjects = await projects.get('list');

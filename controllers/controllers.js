@@ -13,10 +13,16 @@ const { getUserDynamo,
     getUsersListDynamo,
     getProjectsListDynamo,
     postProjectsListDynamo,
-    postProjectDynamo} = require('../models/models.js');
+    postProjectDynamo,
+    setupMarkersDynamo} = require('../models/models.js');
 
 // setup project
 
+exports.setupMarkers = (req, res) => {
+    setupMarkersDynamo(req.params.project_name).then(() => {
+        res.status(201).send('done')
+    })
+}
 exports.getProjectsList = (req, res) => {
     getProjectsListDynamo().then((result) => {
         res.status(200).send({list: result})

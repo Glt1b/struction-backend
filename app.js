@@ -16,7 +16,8 @@ const {
   postUsersList,
   getProjectsList,
   postProjectsList,
-  postProject
+  postProject,
+  setupMarkers
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -45,6 +46,7 @@ app.use(function (req, res, next) {
 
 app.get("/api/projects", getProjectsList);
 app.post("/api/projects", postProjectsList);
+app.post("/api/markersSetup/:project_name", setupMarkers);
 
 // project data
 
