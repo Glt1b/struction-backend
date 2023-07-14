@@ -26,7 +26,8 @@ exports.getProjectsListDynamo = async () => {
 
 exports.postProjectsListDynamo = async (newList) => {
     let projects = db.collection('projects');
-    let postProjects = await projects.set('list', newList)
+    let postProjects = await projects.set('list', {
+        'list': newList})
 }
 
 // users
