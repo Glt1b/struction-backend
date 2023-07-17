@@ -16,6 +16,8 @@ exports.setupMarkersDynamo = async (project_name) => {
     let setup = await project.set('markers', {
         'markers': []
     })
+    let get = await project.get('markers');
+    console.log(get)
 }
 
 exports.getProjectsListDynamo = async () => {

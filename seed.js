@@ -25,7 +25,7 @@ run = async function(){
     let projects = db.collection('projects')
 
     let projectsList = await projects.set('list', {
-        "list": ['project 1', 'project 2']
+        "list": ["apartments_unit_", "medical_centre_", "Macclesfield_District_General_Hospital"]
     })
 
     // project1
