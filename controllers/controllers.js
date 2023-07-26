@@ -120,9 +120,9 @@ exports.getImage = (req, res) => {
 }
 
 exports.postImage = (req, res) => {
-
-    postImageS3(req.params.image_id, req.body.data).then((result) => {
-        res.status(201).send(req.body.data)
+    console.log(req.body.data)
+    postImageS3(req.params.image_id, req.body.data).then((result) => { 
+        res.status(201).send()
     })
 }
 
