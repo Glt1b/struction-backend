@@ -282,8 +282,7 @@ run = async function(){
             "services": ["Duct", "Cable Tray", "Void", "Joints", "exposed screwes"],
             "locations": [
                 {"name": "ground floor",
-                 "url": "Macclesfield_District_General_Hospital-ground_floor"},
-                 
+                 "url": "Macclesfield_District_General_Hospital-ground_floor"}
                 ]
           
     })
@@ -335,4 +334,4 @@ run = async function(){
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
 }
 
-//run()
+run()
