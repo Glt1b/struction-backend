@@ -17,7 +17,8 @@ const {
   getProjectsList,
   postProjectsList,
   postProject,
-  setupMarkers
+  setupMarkers,
+  patchMultimarkers
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -55,6 +56,8 @@ app.post("/api/projects/:project_name", postProject);
 app.post("/api/markers/:project_name", postMarker);
 app.delete("/api/markers/:project_name/:marker_id", delMarker);
 app.patch("/api/markers/:project_name/:marker_id", patchMarker);
+
+app.patch("/api/MultiMarkers/:project_name", patchMultimarkers);
 
 
 // images

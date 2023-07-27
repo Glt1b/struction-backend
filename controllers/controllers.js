@@ -14,7 +14,8 @@ const { getUserDynamo,
     getProjectsListDynamo,
     postProjectsListDynamo,
     postProjectDynamo,
-    setupMarkersDynamo} = require('../models/models.js');
+    setupMarkersDynamo,
+    patchMultimarkersDynamo} = require('../models/models.js');
 
 // setup project
 
@@ -110,6 +111,12 @@ exports.patchMarker = (req, res) => {
     })
 }
 
+exports.patchMultimarkers = (req, res) => {
+    patchMultimarkersDynamo(req.params.project_name, req.body).then((result) => {
+        res.status(200).send(result)
+    })
+}
+
 // images
 
 exports.getImage = (req, res) => {
@@ -121,7 +128,7 @@ exports.getImage = (req, res) => {
 
 exports.postImage = (req, res) => {
     postImageS3(req.params.image_id, req.body.data).then((result) => { 
-        res.status(201).send()
+        res.status(201).send(result)
     })
 }
 

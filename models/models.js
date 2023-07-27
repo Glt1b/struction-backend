@@ -305,6 +305,10 @@ exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
     return markersToSend
 }
 
+exports.patchMultimarkersDynamo = async () => {
+
+}
+
 // images
 
 
@@ -328,10 +332,14 @@ exports.postImageS3 = async (image_id, image) => {
         Body: image,
       }).promise()
 
-    return 'uploaded'
-
-
+    if (uploadedImage && uploadedImage.Location) {
+        return true;
+    } else {
+        return false;
+        // Handle the failure case if needed
+    }
 }
+
 
 exports.delImageS3 = async (image_id) => {
     const image = await s3.deleteObject({
