@@ -5,33 +5,70 @@ const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
 run = async function(){
 
     // users
- 
+    /* 
     let users = db.collection('users')
 
     let usersList = await users.set('users', {
-        "users": ['m.palenik@gmail.com']
+        "users": ['m.palenik2015@gmail.com', 'pawelkinasz3@gmail.com', 'andriusgerdauskas01@gmail.com', 'miroslavhresan39@gmail.com', 'info@ampaconstruction.co.uk',
+    'andrii199012345@gmail.com', 'drogobitskiy@gmail.com', 'kamill2468@gmail.com', 'dan.brown@mbcbuilding.co.uk', 'tony.corr@mbcbuilding.co.uk']
     })
 
-    let test_user = await users.set('m.palenik@gmail.com', {
-        "name": "Marcin Palenik",
-        "role": "manager",
-        "password": "worker123",
+    let test_user = await users.set('tony.corr@mbcbuilding.co.uk', {
+        "name": "Tony Corr",
+        "role": "Operative",
+        "password": "tony.corr123@mbcbuilding.co.uk",
         "code": "",
-        "projects": ["apartments_unit_", "medical_centre_"]
+        "projects": []
     })
+*/
+   
 
     // list of projects
 
     let projects = db.collection('projects')
+    let list = await projects.get('list');
+
+    console.log(list)
+
 
     let projectsList = await projects.set('list', {
-        "list": ["apartments_unit_", "medical_centre_", "Macclesfield_District_General_Hospital"]
+        "list": [
+      'Stopford Building',
+      'Mansfield Cooper Building',
+      'Hulme Hall - Houldsworth',
+      'Horniman House.',
+      'St Annes Voluntary Academy',
+      'Test project',
+      'Hulme Hall  Burkhardt',
+      'Simon Building',
+      'Hulme Hall-Gym and Squash',
+      'Martin Harris Building',
+      'Ellen Wilkinson Building',
+      'Sudgen Sport Centre',
+      'Carys Bannister',
+      'Coupland Building 1',
+      'St Anselm Hall',
+      'Stephen Joseph Studio',
+      'Humanities Bridgeford Street'
+    ]
     })
-
-    // project1
-
-    let apartments_unit_ = db.collection('apartments_unit_')
+/*
+    */
     
+
+    
+    
+    
+    
+    // project1
+ 
+/*
+    let apartments_unit_ = db.collection('Test project')
+
+    let x = await apartments_unit_.get('details');
+
+    console.log(x.props.locations)
+   
     let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
@@ -39,15 +76,14 @@ run = async function(){
             "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
-                {"name": "ground floor",
-                 "url": "apartments-ground-floor"},
-                 ,
-            {   "name": "first floor",
-                "url": "apartments-first-floor"}
-                ]
+                { name: 'First floor ', url: 'Test project-First floor ' },
+                { name: 'Second floor', url: 'Test project-Second floor' }
+              ]
           
     })
-
+    
+   
+ 
     let markers1 = await apartments_unit_.set('markers', {
         "markers": [
 
@@ -57,7 +93,10 @@ run = async function(){
                 "status": "completed",
                 "location": "ground floor",
                 "locationOnDrawing": ["100", "900"],
-                "materialsUsed": ["collar", "mastic"],
+                "materialsUsed": [
+                    {"Ablative batt": ["150", "200", "0", "1"]},
+                    {"Collar": ["0", "0", "110", "2"]}
+                ],
                 "measurements": ["150", "150"],
                 "service": ["pipe"],
                 "completedBy": "username",
@@ -90,7 +129,10 @@ run = async function(){
                 "status": "completed",
                 "location": "ground floor",
                 "locationOnDrawing": ["100", "2500"],
-                "materialsUsed": ["collar", "mastic"],
+                "materialsUsed": [
+                    {"Ablative batt": ["150", "200", "0", "1"]},
+                    {"Collar": ["0", "0", "110", "2"]}
+                ],
                 "measurements": ["150", "150"],
                 "service": ["pipe"],
                 "completedBy": "username",
@@ -122,7 +164,10 @@ run = async function(){
                 "status": "toBeDone",
                 "location": "ground floor",
                 "locationOnDrawing": ["900", "800"],
-                "materialsUsed": ["collar", "mastic"],
+                "materialsUsed": [
+                    {"Ablative batt": ["150", "200", "0", "1"]},
+                    {"Collar": ["0", "0", "110", "2"]}
+                ],
                 "measurements": ["150", "150"],
                 "service": ["pipe"],
                 "completedBy": "username",
@@ -154,7 +199,10 @@ run = async function(){
               "status": "issue",
               "location": "first floor",
               "locationOnDrawing": ["200", "400"],
-              "materialsUsed": ["firebatt", "mastic", "wrap"],
+              "materialsUsed": [
+                {"Ablative batt": ["150", "200", "0", "1"]},
+                {"Collar": ["0", "0", "110", "2"]}
+            ],
               "measurements": ["150", "150"],
               "service": ["duct", "cable"],
               "completedBy": "username",
@@ -200,6 +248,8 @@ run = async function(){
                 ]
            
      })
+
+     
  
      let markers2 = await medical_centre_.set('markers', {
          "markers": [
@@ -210,7 +260,10 @@ run = async function(){
                  "status": "completed",
                  "location": "basement",
                  "locationOnDrawing": ["800", "800"],
-                 "materialsUsed": ["collar", "mastic"],
+                 "materialsUsed": [
+                    {"Ablative batt": ["150", "200", "0", "1"]},
+                    {"Collar": ["0", "0", "110", "2"]}
+                ],
                  "measurements": ["150", "150"],
                  "service": ["pipe"],
                  "completedBy": "username",
@@ -242,7 +295,10 @@ run = async function(){
                "status": "completed",
                "location": "second floor",
                "locationOnDrawing": ["100", "100"],
-               "materialsUsed": ["firebatt", "mastic", "wrap"],
+               "materialsUsed": [
+                {"Ablative batt": ["150", "200", "0", "1"]},
+                {"Collar": ["0", "0", "110", "2"]}
+            ],
                "measurements": ["150", "150"],
                "service": ["duct", "cable"],
                "completedBy": "username",
@@ -270,57 +326,7 @@ run = async function(){
          ]
      })
 
-         // project1
-
-    let hospital = db.collection("Macclesfield_District_General_Hospital")
-    
-    let details3 = await hospital.set('details', {
-        
-            "address": "Macclesfield",
-            "users": ["Marcin Palenik"],
-            "materials": ["Mastic", "Batt and Mastic"],
-            "services": ["Duct", "Cable Tray", "Void", "Joints", "exposed screwes"],
-            "locations": [
-                {"name": "ground floor",
-                 "url": "Macclesfield_District_General_Hospital-ground_floor"}
-                ]
-          
-    })
-
-    let markers3 = await hospital.set('markers', {
-        "markers": [
-            {"adam-timestamp": { 
-            "id": "adam-timestamp",
-            "number": "B/12/22",
-            "status": "completed",
-            "location": "second floor",
-            "locationOnDrawing": ["100", "100"],
-            "materialsUsed": ["firebatt", "mastic", "wrap"],
-            "measurements": ["150", "150"],
-            "service": ["duct", "cable"],
-            "completedBy": "username",
-            "comment": "",
-            "photos": [],
-            "photos_after": ["url to photo 1", "url to photo 2"],
-            "fR": '30',
-            "type": "seal",
-            "doorConfiguration": '',
-            "doorGapHinge": '',
-            "doorGapLockSide": '',
-            "doorGapHead": '',
-            "doorGapBottom": '',
-            "openingHeight": '',
-            "visionPanel": '',
-            "frameCondition": '',
-            "frameConditionComment": '',
-            "hingeAdjustment": '',
-            "ironmongery": '',
-            "handle": '',
-            "lock": '',
-            "doorCondition": ''
-  
-        }}]
-    })
+ 
     
      
 
@@ -332,6 +338,8 @@ run = async function(){
 
      console.log(list)
      //console.log(itemTestUser, itemDetails1, itemMarkers1.props.markers, itemDetails2, itemMarkers2)
-}
 
-run()
+*/
+    }
+
+//run()

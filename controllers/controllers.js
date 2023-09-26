@@ -128,7 +128,12 @@ exports.getImage = (req, res) => {
 
 exports.postImage = (req, res) => {
     postImageS3(req.params.image_id, req.body.data).then((result) => { 
-        res.status(201).send(result)
+        if(result){
+            res.status(201).send(result)
+        } else {
+            res.status(500).send('error')
+        }
+        
     })
 }
 
