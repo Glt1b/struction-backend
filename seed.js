@@ -4,25 +4,31 @@ const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
 
 run = async function(){
 
-    // users
-    /* 
+    //users 
+  
     let users = db.collection('users')
 
     let usersList = await users.set('users', {
         "users": ['m.palenik2015@gmail.com', 'pawelkinasz3@gmail.com', 'andriusgerdauskas01@gmail.com', 'miroslavhresan39@gmail.com', 'info@ampaconstruction.co.uk',
-    'andrii199012345@gmail.com', 'drogobitskiy@gmail.com', 'kamill2468@gmail.com', 'dan.brown@mbcbuilding.co.uk', 'tony.corr@mbcbuilding.co.uk']
+    'andrii199012345@gmail.com', 'drogobitskiy@gmail.com', 'kamill2468@gmail.com', 'dan.brown@mbcbuilding.co.uk', 'tony.corr@mbcbuilding.co.uk', 'lee.cunningham@mbcbuilding.co.uk',
+'alicjaputyra89@gmail.com', 'radu.moraru.94@gmail.ru', 'anatolierijenco@gmail.com', 'sv4win@gmail.com', 'kamiltubis@vp.pl', 'csercsakornelia1@gmail.com',
+'dominic.gregory@warden.co.uk', 'michael.holt@warden.co.uk', 'joe.ashton@warden.co.uk', 'jim.d112@yahoo.com', 'poke.kzg@gmail.com', 'kolya.kuzmych.1995.kosmirak@gmail.com',
+'matthew.roadley@ventrogroup.com', 'renepompa66@gmail.com', 'stevopompa66@gmail.com', 'as1st.vip0806@gmail.com', 'm.gnurf80@gmail.com', 'alexandr18031983@gmail.com', 'kirilukoleksandr0@gmail.com',
+'robertgreg1945@gmail.com', 'alexandrmikhalchan@gmail.com', 'synyshyn.serhiy@gmail.com', 'tolian1174@gmail.com', 'borysevy4i@gmail.com', 'marcin.mitura@wp.pl', 'ashley@udc-ltd.co.uk',
+'mateusz.kolus1@gmail.com', 'tomagyi1606@gmail.com', 'andrii199012345@gmail.com']
     })
 
-    let test_user = await users.set('tony.corr@mbcbuilding.co.uk', {
-        "name": "Tony Corr",
+    let test_user = await users.set('andrii199012345@gmail.com', {
+        "name": "Andrii Bohoslaviec",
         "role": "Operative",
-        "password": "tony.corr123@mbcbuilding.co.uk",
+        "password": "Andrii123",
         "code": "",
         "projects": []
-    })
-*/
-   
-
+    })  
+   /*
+ 
+ 
+  /*
     // list of projects
 
     let projects = db.collection('projects')
@@ -33,42 +39,57 @@ run = async function(){
 
     let projectsList = await projects.set('list', {
         "list": [
-      'Stopford Building',
-      'Mansfield Cooper Building',
-      'Hulme Hall - Houldsworth',
-      'Horniman House.',
-      'St Annes Voluntary Academy',
-      'Test project',
-      'Hulme Hall  Burkhardt',
-      'Simon Building',
-      'Hulme Hall-Gym and Squash',
-      'Martin Harris Building',
-      'Ellen Wilkinson Building',
-      'Sudgen Sport Centre',
       'Carys Bannister',
       'Coupland Building 1',
+      'Ellen Wilkinson Building',
+      'Horniman House.',
+      'Hulme Hall  Burkhardt',
+      'Hulme Hall - Houldsworth',
+      'Hulme Hall-Gym and Squash',
+      'Humanities Bridgeford Street',
+      'Kingsbridge Court',
+      'Macclesfield District General Hospital',
+      'Mansfield Cooper Building',
+      'Martin Harris Building',
+      'Simon Building',
+      'Skipton Academy',
+      'St Annes Voluntary Academy',
       'St Anselm Hall',
       'Stephen Joseph Studio',
-      'Humanities Bridgeford Street'
+      'Stopford Building',
+      'Sudgen Sport Centre',
+      'Test project',
+      'The Fairways Liverpool',
+      'Woolton Views',
+      'Samuel Alexander',
+      'Edward Grant',
+      'Annie Derby',
+      'Ashton Park',
+      'Vaughan House',
+      'Apprentice Court',
+      'Sir Robert Thomas',
+      'Museum Building',
+      'Aldbourne Court',
+      'Harry Piggot',
+      'Humphreys Court',
+      'Mossbrook Court'
+
     ]
     })
-/*
-    */
+ */
+    
     
 
     
-    
-    
-    
     // project1
- 
-/*
-    let apartments_unit_ = db.collection('Test project')
+ /*
+
+    let apartments_unit_ = db.collection('Macclesfield District General Hospital')
 
     let x = await apartments_unit_.get('details');
 
     console.log(x.props.locations)
-   
+  
     let details1 = await apartments_unit_.set('details', {
         
             "address": "some_address",
@@ -76,13 +97,19 @@ run = async function(){
             "materials": ["firebatt", "mastic", "collar", "wrap", "putty pad"],
             "services": ["steel beam", "pipe", "duct", "cable tray", "cable"],
             "locations": [
-                { name: 'First floor ', url: 'Test project-First floor ' },
-                { name: 'Second floor', url: 'Test project-Second floor' }
+                {
+                  name: 'Ground floor ',
+                  url: 'Macclesfield District General Hospital-Ground floor '
+                },
+                {
+                  name: 'First floor ',
+                  url: 'Macclesfield District General Hospital-First floor '
+                }
               ]
           
-    })
+    }) 
     
-   
+    /*
  
     let markers1 = await apartments_unit_.set('markers', {
         "markers": [
@@ -228,7 +255,8 @@ run = async function(){
     
           }}
         ]
-    })
+    }) */
+    /*
 
      // project2
 
@@ -342,4 +370,4 @@ run = async function(){
 */
     }
 
-//run()
+run()

@@ -13,17 +13,11 @@ const { getUserDynamo,
     getUsersListDynamo,
     getProjectsListDynamo,
     postProjectsListDynamo,
-    postProjectDynamo,
-    setupMarkersDynamo,
-    patchMultimarkersDynamo} = require('../models/models.js');
+    postProjectDynamo} = require('../models/models.js');
 
 // setup project
 
-exports.setupMarkers = (req, res) => {
-    setupMarkersDynamo(req.params.project_name).then(() => {
-        res.status(201).send('done')
-    })
-}
+
 exports.getProjectsList = (req, res) => {
     getProjectsListDynamo().then((result) => {
         res.status(200).send({list: result})
@@ -71,6 +65,8 @@ exports.postUsersList = (req, res) => {
     })
 }
 
+// generate code -> send code
+
 // project details
 
 exports.getProject = (req, res) => {
@@ -108,12 +104,6 @@ exports.patchMarker = (req, res) => {
         const obj = {markers: result}
         console.log(obj)
         res.status(200).send(obj)
-    })
-}
-
-exports.patchMultimarkers = (req, res) => {
-    patchMultimarkersDynamo(req.params.project_name, req.body).then((result) => {
-        res.status(200).send(result)
     })
 }
 
