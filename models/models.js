@@ -103,7 +103,7 @@ exports.postMarkerDynamo = async (project_name, marker) => {
 exports.delMarkerDynamo = async (project_name, marker_id) => {
     let project = db.collection(project_name);
     await project_name.delete(marker_id)
-    return
+    return {}
 }
 
 exports.patchMarkerDynamo = async (project_name, marker_id, obj) => {
