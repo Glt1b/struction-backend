@@ -16,7 +16,8 @@ const {
   postUsersList,
   getProjectsList,
   postProjectsList,
-  postProject
+  postProject,
+  getCode
 } = require("./controllers/controllers.js");
 
 const cors = require("cors");
@@ -65,6 +66,7 @@ app.delete("/api/image/:image_id", delImage);
 // users
 
 app.get("/api/users", getUsersList);
+app.get("/api/code", getCode);
 app.post("/api/users", postUsersList);
 
 app.get("/api/users/:username", getUser);

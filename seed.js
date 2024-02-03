@@ -15,13 +15,14 @@ run = async function(){
 'dominic.gregory@warden.co.uk', 'michael.holt@warden.co.uk', 'joe.ashton@warden.co.uk', 'jim.d112@yahoo.com', 'poke.kzg@gmail.com', 'kolya.kuzmych.1995.kosmirak@gmail.com',
 'matthew.roadley@ventrogroup.com', 'renepompa66@gmail.com', 'stevopompa66@gmail.com', 'as1st.vip0806@gmail.com', 'm.gnurf80@gmail.com', 'alexandr18031983@gmail.com', 'kirilukoleksandr0@gmail.com',
 'robertgreg1945@gmail.com', 'alexandrmikhalchan@gmail.com', 'synyshyn.serhiy@gmail.com', 'tolian1174@gmail.com', 'borysevy4i@gmail.com', 'marcin.mitura@wp.pl', 'ashley@udc-ltd.co.uk',
-'mateusz.kolus1@gmail.com', 'tomagyi1606@gmail.com', 'andrii199012345@gmail.com']
+'mateusz.kolus1@gmail.com', 'tomagyi1606@gmail.com', 'andrii199012345@gmail.com', 'manchester@council', 'tokarzewski21@gmail.com', 'lhmanagementcompany@gmail.com', 'james@londonbuildingcontrol.co.uk',
+'medvedjuk17@gmail.com', 'sseem.info@gmail.com']
     })
 
-    let test_user = await users.set('andrii199012345@gmail.com', {
-        "name": "Andrii Bohoslaviec",
+    let test_user = await users.set('sseem.info@gmail.com', {
+        "name": "Vasile Semeniuc",
         "role": "Operative",
-        "password": "Andrii123",
+        "password": "Vasile123",
         "code": "",
         "projects": []
     })  
@@ -370,4 +371,4 @@ run = async function(){
 */
     }
 
-//run()
+run()

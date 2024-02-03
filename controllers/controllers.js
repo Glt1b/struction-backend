@@ -65,7 +65,14 @@ exports.postUsersList = (req, res) => {
     })
 }
 
-// generate code -> send code
+exports.getCode = (req, res) => {
+    // generate code
+    const randomNum = Math.floor(Math.random() * 9000) + 1000;
+    const code = randomNum.toString();
+    // send code to email
+    
+    res.status(200).send({code: code})
+}
 
 // project details
 
