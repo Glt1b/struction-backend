@@ -15,6 +15,8 @@ const { getUserDynamo,
     postProjectsListDynamo,
     postProjectDynamo} = require('../models/models.js');
 
+const nodemailer = require('nodemailer');
+
 // setup project
 
 
@@ -70,7 +72,34 @@ exports.getCode = (req, res) => {
     const randomNum = Math.floor(Math.random() * 9000) + 1000;
     const code = randomNum.toString();
     // send code to email
+    let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com", // SMTP server host
+        port: 587, // SMTP port (typically 587 for TLS)
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: 'marcin.palenik@ampa-construction.co.uk', // your email
+            pass: 'Struction123' // your email password
+        }
+    });
     
+    // Setup email data
+    let mailOptions = {
+        from: '"Marcin Palenik" <marcin.palenik@ampa-construction.co.uk>', // sender address
+        to: req.params.username, // list of receivers
+        subject: "Ampa Construction Code", // Subject line
+        text: `Your code is: ${code}`, // plain text body
+        html: "<b>Hello world?</b>" // html body
+    };
+    
+    // Send mail
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+    });
+
+
     res.status(200).send({code: code})
 }
 

@@ -66,7 +66,7 @@ app.delete("/api/image/:image_id", delImage);
 // users
 
 app.get("/api/users", getUsersList);
-app.get("/api/code", getCode);
+app.get("/api/code/:username", getCode);
 app.post("/api/users", postUsersList);
 
 app.get("/api/users/:username", getUser);
