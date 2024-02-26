@@ -79,8 +79,9 @@ exports.getCode = (req, res) => {
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASSWORD
-        }
-        
+        },
+        logger: true, // Enable logging
+        debug: true // Show debug output
     });
     
     // Setup email data

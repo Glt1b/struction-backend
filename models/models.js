@@ -1,6 +1,4 @@
 
-
-
 process.env.CYCLIC_DB = 'https://struction-backend.cyclic.app'
 const CyclicDB = require('@cyclic.sh/dynamodb')
 const db = CyclicDB('tan-outrageous-ostrichCyclicDB')
