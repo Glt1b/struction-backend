@@ -77,9 +77,10 @@ exports.getCode = (req, res) => {
         port: 587, // SMTP port (typically 587 for TLS)
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'marcin.palenik@ampa-construction.co.uk', // your email
-            pass: 'Struction123' // your email password
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASSWORD
         }
+        
     });
     
     // Setup email data
